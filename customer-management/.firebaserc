@@ -1,0 +1,14 @@
+{
+  "targets": {
+    "customer-management-service": {
+      "hosting": {
+        "customer-management": [
+          "customer-management-service"
+        ]
+      }
+    }
+  },
+  "projects": {
+    "default": "customer-management-service"
+  }
+}
