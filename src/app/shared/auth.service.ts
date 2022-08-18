@@ -1,13 +1,14 @@
-import { Injectable } from '@angular/core';
+import { Injectable,Output,EventEmitter } from '@angular/core';
 import { Auth } from '@angular/fire/auth';
+import { Input } from '@angular/core';
 import { AngularFireAuth } from '@angular/fire/compat/auth'
 import { Router } from '@angular/router';
-import {GoogleAuthProvider,FacebookAuthProvider,GithubAuthProvider} from '@angular/fire/auth'
+import { GoogleAuthProvider, FacebookAuthProvider, GithubAuthProvider } from '@angular/fire/auth'
 @Injectable({
   providedIn: 'root'
 })
 export class AuthService {
-
+  test='selam'
   constructor(private fireAuth: AngularFireAuth, private router: Router) { }
   //Login sistemi:
   login(email: string, password: string) {
@@ -15,7 +16,6 @@ export class AuthService {
       localStorage.setItem('token', 'true'); //Token
       this.router.navigate(['dashboard']);
     }, err => {
-      alert("Hata var")
       this.router.navigate(['/login']);
     })
   }
@@ -41,11 +41,11 @@ export class AuthService {
   }
 
   //Google ile giriş
-  googleSignIn(){
-    return this.fireAuth.signInWithPopup(new GoogleAuthProvider).then(res=>{
-        this.router.navigate(['/dashboard']);
-        localStorage.setItem('token',JSON.stringify(res.user?.uid))
-    },err=>{
+  googleSignIn() {
+    return this.fireAuth.signInWithPopup(new GoogleAuthProvider).then(res => {
+      this.router.navigate(['/dashboard']);
+      localStorage.setItem('token', JSON.stringify(res.user?.uid))
+    }, err => {
       alert(err.message)
     })
   }

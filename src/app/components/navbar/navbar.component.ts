@@ -20,9 +20,11 @@ export class NavbarComponent implements OnInit {
       document.body.classList.add("dark-theme");
       this.lightMode = 'white';
       this.navDark = 'navBlack';
+      this.darkMode = true;
     } else {
       document.body.classList.remove("dark-theme");
       this.lightMode = ''
+      this.darkMode = false;
     }
   }
   //DarkMode

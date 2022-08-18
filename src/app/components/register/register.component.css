@@ -87,7 +87,8 @@ input::placeholder {
     position: relative;
     user-select: none;
 }
-.register{
+
+.register {
     display: inline-block;
     margin: 10px 2px;
     text-decoration: none;
@@ -96,7 +97,8 @@ input::placeholder {
     font-weight: 500;
     line-height: 1.2;
 }
-.register:hover{
+
+.register:hover {
     text-decoration: underline;
 }
 

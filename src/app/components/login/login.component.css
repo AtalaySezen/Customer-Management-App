@@ -87,7 +87,8 @@ input::placeholder {
     position: relative;
     user-select: none;
 }
-.register{
+
+.register {
     display: flex;
     margin: 10px 2px;
     text-decoration: none;
@@ -96,12 +97,20 @@ input::placeholder {
     font-weight: 500;
     line-height: 1;
 }
-.register:hover{
+
+.register:hover {
     text-decoration: underline;
 }
-
-
-
+.none{
+    display: none;
+}
+.error-fill{
+    font-size: 16px;
+    font-weight: 500;
+    border-bottom: 1px solid red;
+    padding: 10px 0;
+    text-transform: capitalize;
+}
 /* Mobil */
 @media(max-width:900px) {
     .fluid-container {
@@ -122,3 +131,4 @@ input::placeholder {
         height: 20px;
     }
 }
+

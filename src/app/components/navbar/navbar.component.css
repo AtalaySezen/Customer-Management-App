@@ -15,6 +15,9 @@
     background-color: black !important;
 }
 
+.home{
+    cursor: pointer;
+}
 
 
 /*Media quaries*/

@@ -1,29 +1,45 @@
 <div class="fluid-container">
     <div class="container">
-        <form action="">
+        <form [formGroup]="formCard">
             <div class="form-info">
                 <label>Email Adress</label>
-                <input type="email" name="email" [(ngModel)]="email" placeholder="email">
+                <input [formControlName]="email" name="email" type="email" [(ngModel)]="email">
             </div>
             <div class="form-info">
                 <label>Password</label>
-                <input type="password" name="password" [(ngModel)]="password" placeholder="password">
+                <input [formControlName]="password" type="password" placeholder="password" [(ngModel)]="password">
             </div>
-
-            <button class="btn-login" (click)="login()">Login</button>
+            <button class="btn-login" [disabled]="!formCard.valid" (click)="login()">Login</button>
             <button class="btn-login" (click)="signInWithGoogle()">Sign With Google</button>
-
             <a class="register" routerLink="/register">Register</a>
-          
-
-
-
         </form>
-</div>
-<div class="rightside">
-    <h1 class="header-right">Customer Management</h1>
-</div>
 
 
 
+        <form [formGroup]="formCard">
+            <ng-container *ngIf="formCard.get('username')?.invalid&&
+            formCard.get('username')?.invalid ">
+            <div>
+                username hatalı
+            </div>
+            </ng-container>
+            <ng-container *ngIf="formCard.get('surname')?.invalid&&
+            formCard.get('surname')?.invalid ">
+            <div>
+                surname hatalı
+            </div>
+            </ng-container>
+            <div>
+                <input type="text" formControlName="username">
+                <input type="text" formControlName="surname">
+                form valid mi?{{formCard.valid?"evet":"hayır"}}
+            </div>
+        </form>
+
+        
+    </div>
+    
+    <div class="rightside">
+        <h1 class="header-right">Customer Management</h1>
+    </div>
 </div>
