@@ -101,16 +101,26 @@ input::placeholder {
 .register:hover {
     text-decoration: underline;
 }
-.none{
+
+.none {
     display: none;
 }
-.error-fill{
+
+.error-fill {
     font-size: 16px;
     font-weight: 500;
     border-bottom: 1px solid red;
     padding: 10px 0;
     text-transform: capitalize;
 }
+
+.form-messages {
+    font-size: 18px;
+    font-weight: 500;
+    line-height: 1.2;
+    margin-bottom: 15px;
+}
+
 /* Mobil */
 @media(max-width:900px) {
     .fluid-container {
@@ -131,4 +141,3 @@ input::placeholder {
         height: 20px;
     }
 }
-
