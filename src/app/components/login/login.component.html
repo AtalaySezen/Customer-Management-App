@@ -9,11 +9,19 @@
                 <label>Password</label>
                 <input type="password" name="password" [(ngModel)]="password" placeholder="password">
             </div>
+
             <button class="btn-login" (click)="login()">Login</button>
+            <button class="btn-login" (click)="signInWithGoogle()">Sign With Google</button>
+
+            <a class="register" routerLink="/register">Register</a>
+          
+
+
+
         </form>
 </div>
 <div class="rightside">
-    <h1 class="header-right">Customer Management Dashboard</h1>
+    <h1 class="header-right">Customer Management</h1>
 </div>
 
 

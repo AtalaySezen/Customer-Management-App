@@ -11,8 +11,6 @@
     justify-content: center;
     border: 1px solid black;
     background-image: linear-gradient(120deg, #fdfbfb 0%, #ebedee 100%);
-
-
 }
 
 form {
@@ -89,7 +87,18 @@ input::placeholder {
     position: relative;
     user-select: none;
 }
-
+.register{
+    display: flex;
+    margin: 10px 2px;
+    text-decoration: none;
+    color: black;
+    font-size: 18px;
+    font-weight: 500;
+    line-height: 1;
+}
+.register:hover{
+    text-decoration: underline;
+}
 
 
 
