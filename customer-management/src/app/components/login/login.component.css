@@ -43,9 +43,7 @@ label {
     text-align: left;
 }
 
-input:hover {
-    border: 1px solid black;
-}
+
 
 input::placeholder {
     font-size: 18px;
@@ -88,10 +86,10 @@ input::placeholder {
 .header-right {
     font-size: 3rem;
     color: white;
-    overflow: hidden;
     position: relative;
-    display: inline-block;
+    user-select: none;
 }
+
 
 
 

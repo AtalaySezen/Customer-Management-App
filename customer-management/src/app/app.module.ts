@@ -13,12 +13,22 @@ import { LoginComponent } from './components/login/login.component';
 import { RegisterComponent } from './components/register/register.component';
 import { DashboardComponent } from './components/dashboard/dashboard.component'
 import { FormsModule } from '@angular/forms';
+import {MatToolbarModule} from '@angular/material/toolbar';
+import {MatIconModule} from '@angular/material/icon';
+import {MatTable, MatTableModule} from '@angular/material/table';
+import {MatSidenavModule} from '@angular/material/sidenav';
+import { UsersInfoComponent } from './components/users-info/users-info.component';
+import { NavbarComponent } from './components/navbar/navbar.component';
+
+
 @NgModule({
   declarations: [
     AppComponent,
     LoginComponent,
     RegisterComponent,
-    DashboardComponent
+    DashboardComponent,
+    UsersInfoComponent,
+    NavbarComponent,
   ],
   imports: [
     BrowserModule,
@@ -28,7 +38,11 @@ import { FormsModule } from '@angular/forms';
     provideFirebaseApp(() => initializeApp(environment.firebase)),
     provideAuth(() => getAuth()),
     provideFirestore(() => getFirestore()),
-    AngularFireModule.initializeApp(environment.firebase)
+    AngularFireModule.initializeApp(environment.firebase),
+    MatToolbarModule,
+    MatIconModule,
+    MatTableModule,
+    MatSidenavModule
   ],
   providers: [],
   bootstrap: [AppComponent]
