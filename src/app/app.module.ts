@@ -19,6 +19,8 @@ import {MatTable, MatTableModule} from '@angular/material/table';
 import {MatSidenavModule} from '@angular/material/sidenav';
 import { UsersInfoComponent } from './components/users-info/users-info.component';
 import { NavbarComponent } from './components/navbar/navbar.component';
+import { ReactiveFormsModule } from '@angular/forms';
+
 
 
 @NgModule({
@@ -42,7 +44,8 @@ import { NavbarComponent } from './components/navbar/navbar.component';
     MatToolbarModule,
     MatIconModule,
     MatTableModule,
-    MatSidenavModule
+    MatSidenavModule,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
