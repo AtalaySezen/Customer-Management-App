@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { AuthService } from 'src/app/shared/auth.service';
+import { ReactiveFormsModule, Validators } from '@angular/forms';
+import { FormGroup, FormControl } from '@angular/forms';
 
 @Component({
   selector: 'app-register',
@@ -10,24 +12,28 @@ export class RegisterComponent implements OnInit {
   email: string = '';
   password: string = '';
 
-  constructor(private auth:AuthService) { }
+  constructor(private auth: AuthService) { }
 
   ngOnInit(): void {
   }
+  //Validation
+  registerForm = new FormGroup({
+    email: new FormControl('', [Validators.minLength(5), Validators.email]),
+    password: new FormControl('', [Validators.minLength(5)])
+  })
 
   register() {
 
-    if(this.email == '') {
-      alert('Please enter email');
+    if (this.email == '') {
       return;
     }
 
-    if(this.password == '') {
+    if (this.password == '') {
       alert('Please enter password');
       return;
     }
 
-    this.auth.register(this.email,this.password);
+    this.auth.register(this.email, this.password);
     this.email = '';
     this.password = '';
   }

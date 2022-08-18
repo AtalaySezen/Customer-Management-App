@@ -52,3 +52,9 @@ body {
   p,label,input {
     color: var(--text-color);
   }
+  .form-messages {
+    font-size: 18px;
+    font-weight: 500;
+    line-height: 1.2;
+    margin-bottom: 15px;
+}

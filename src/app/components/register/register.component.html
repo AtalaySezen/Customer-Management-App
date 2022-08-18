@@ -1,15 +1,42 @@
 <div class="fluid-container">
   <div class="container">
-    <form action="">
+    <ng-container *ngIf="registerForm.get('email')?.untouched">
+      <p class="form-messages">
+        Welcome The Customer Management
+      </p>
+    </ng-container>
+    <ng-container *ngIf="registerForm.get('email')?.invalid">
+      <div>
+        <p class="form-messages">
+          Please Enter A Valid Email Adress
+        </p>
+      </div>
+    </ng-container>
+    <ng-container *ngIf="registerForm.get('email')?.touched&&registerForm.get('email')?.invalid">
+      <div>
+        <p class="form-messages">
+          Please Enter A Valid Email Adress
+        </p>
+      </div>
+    </ng-container>
+    <ng-container *ngIf="registerForm.get('password')?.invalid&&
+registerForm.get('password')?.invalid ">
+      <div>
+        <p class="form-messages">
+          Password Is Too Short
+        </p>
+      </div>
+    </ng-container>
+    <form [formGroup]="registerForm">
       <div class="form-info">
         <label>Email Adress</label>
-        <input type="email" name="email" [(ngModel)]="email" placeholder="email">
+        <input formControlName="email" type="email" name="email" [(ngModel)]="email" placeholder="email">
       </div>
       <div class="form-info">
         <label>Password</label>
-        <input type="password" name="password" [(ngModel)]="password" placeholder="password">
+        <input formControlName="password" type="password" name="password" [(ngModel)]="password" placeholder="password">
       </div>
-      <button class="btn-login" (click)="register()">Register</button>
+      <button class="btn-login" [disabled]="!registerForm.valid" (click)="register()">Register</button>
     </form>
   </div>
   <div class="rightside">
