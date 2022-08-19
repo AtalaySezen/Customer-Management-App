@@ -1,4 +1,4 @@
-import { Injectable,Output,EventEmitter } from '@angular/core';
+import { Injectable, Output, EventEmitter } from '@angular/core';
 import { Auth } from '@angular/fire/auth';
 import { Input } from '@angular/core';
 import { AngularFireAuth } from '@angular/fire/compat/auth'
@@ -8,7 +8,7 @@ import { GoogleAuthProvider, FacebookAuthProvider, GithubAuthProvider } from '@a
   providedIn: 'root'
 })
 export class AuthService {
-  test='selam'
+  test = 'selam'
   constructor(private fireAuth: AngularFireAuth, private router: Router) { }
   //Login sistemi:
   login(email: string, password: string) {
@@ -50,7 +50,13 @@ export class AuthService {
     })
   }
 
-
+  loginRouter() {
+    if (localStorage.getItem('token') == 'true') {
+      return true
+    } else {
+      return false;
+    }
+  }
 
 
 

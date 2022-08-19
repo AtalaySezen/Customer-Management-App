@@ -1,7 +1,8 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit, EventEmitter, Output } from '@angular/core';
 import { AuthService } from 'src/app/shared/auth.service';
 import { Customers } from 'src/app/model/customers';
 import { DataService } from 'src/app/shared/data.service';
+import { BrowserDynamicTestingModule } from '@angular/platform-browser-dynamic/testing';
 
 @Component({
   selector: 'app-dashboard',
@@ -25,12 +26,23 @@ export class DashboardComponent implements OnInit {
   last_name: string = '';
   email: string = '';
   mobile: string = '';
+  table='table'
+  darkMode:boolean=false;
 
   constructor(private auth: AuthService, private data: DataService) { }
-
   ngOnInit(): void {
     this.getAllCustomers();
+      // let darkMode = localStorage.getItem('darkMode');
+      // if (darkMode === "true") 
+      // {
+      //   this.table = 'table-red'
+      // }else {
+      //   this.table = 'table';
+      // }
+     
+
   }
+ 
 
   //Logout
   register() {
@@ -49,6 +61,7 @@ export class DashboardComponent implements OnInit {
     }, err => {
       alert('Error while fetching customer data');
     })
+
 
   }
 

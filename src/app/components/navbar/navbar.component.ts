@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 import { AuthService } from 'src/app/shared/auth.service';
 
 @Component({
@@ -6,11 +6,12 @@ import { AuthService } from 'src/app/shared/auth.service';
   templateUrl: './navbar.component.html',
   styleUrls: ['./navbar.component.css']
 })
-export class NavbarComponent implements OnInit {
 
+export class NavbarComponent implements OnInit {
   constructor(private auth: AuthService) { }
   lightMode = '';
   navDark = '';
+
   //DarkMode Icon
   darkMode: boolean = false;
   ngOnInit(): void {
@@ -43,7 +44,7 @@ export class NavbarComponent implements OnInit {
     this.darkMode = false;
   }
 
-//Logout
+  //Logout
   register() {
     this.auth.logout();
   }

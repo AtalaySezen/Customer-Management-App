@@ -1,6 +1,8 @@
 .fluid-container {
     display: flex;
     flex-direction: row;
+    width: 100vw;
+    overflow: hidden;
 }
 
 .container {
@@ -64,13 +66,6 @@ input::placeholder {
     transform: scale(0.98);
 }
 
-.btn-login:hover {
-    background-color: white;
-    transition: 5s;
-    color: black;
-}
-
-
 .rightside {
     display: flex;
     justify-content: center;
@@ -91,7 +86,7 @@ input::placeholder {
 .register {
     display: flex;
     margin: 10px 2px;
-    text-decoration: none;
+    text-decoration: underline;
     color: black;
     font-size: 18px;
     font-weight: 500;
@@ -106,6 +101,11 @@ input::placeholder {
     display: none;
 }
 
+.form-area {
+    height: 30px;
+    margin-bottom: 10px;
+}
+
 .error-fill {
     font-size: 16px;
     font-weight: 500;
@@ -113,7 +113,6 @@ input::placeholder {
     padding: 10px 0;
     text-transform: capitalize;
 }
-
 
 
 /* Mobil */
@@ -125,14 +124,49 @@ input::placeholder {
     .rightside,
     .container {
         height: 50vh;
+        padding-top: 40px;
     }
 
     .header-right {
-        font-size: 1.2rem;
+        display: none;
     }
 
     input {
-        width: 200px;
+        width: 92%;
         height: 20px;
+    }
+
+    .btn-login {
+        margin-top: 10px;
+        font-size: 14px;
+        height: 35px;
+    }
+
+    .register {
+        color: black;
+        text-decoration: underline;
+        font-size: 14px;
+        font-weight: 500;
+        line-height: 1;
+    }
+
+    label {
+        font-size: 14px;
+        font-weight: 400;
+        text-align: center;
+    }
+
+    .form-messages {
+        font-size: 12px;
+    }
+
+    .form-area {
+        margin-bottom: 15px;
+        height: 30px;
+    }
+
+    input::placeholder {
+        font-size: 14px;
+        text-transform: capitalize;
     }
 }

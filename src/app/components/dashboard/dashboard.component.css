@@ -11,13 +11,11 @@
     flex: 1 1 auto;
 }
 
-.navBlack{
+.navBlack {
     background-color: black !important;
 }
-table {
-    width: 100%;
-  }
-.delete-btn{
+
+.delete-btn {
     width: 50%;
     height: 30px;
     border-radius: 10px;
@@ -28,7 +26,8 @@ table {
     font-weight: 500;
     opacity: 0.8;
 }
-.btn-add{
+
+.btn-add {
     width: 128px;
     height: 40px;
     margin-left: 10px;
@@ -37,40 +36,49 @@ table {
     background: green;
     color: white;
     font-size: 16px;
-    
+
 }
 
-.delete-btn,.btn-add:focus{
+.delete-btn,
+.btn-add:focus {
     transform: scale(0.98);
 }
-.form-addCustomer{
+
+.form-addCustomer {
     display: flex;
     justify-content: center;
     align-items: center;
     margin: 15px 0;
     margin-bottom: 40px;
 }
-input{
+
+input {
     height: 20px;
     border-radius: 5px;
     font-size: 16px;
     font-weight: 500;
 }
-.header-add{
+
+.header-add {
     font-weight: 500;
     font-size: 2rem;
     margin-bottom: 0;
     margin-top: 10px;
 }
-label{
+
+label {
     font-size: 16px;
     font-weight: 400;
     margin: 0 5px;
 }
+
 /*Media quaries*/
-@media(max-width:900px){
-    h1{
+@media(max-width:900px) {
+    h1 {
         font-size: 1.2rem !important;
     }
-    h2{font-size: 1rem;}
+
+    h2 {
+        font-size: 1rem;
+    }
 }
