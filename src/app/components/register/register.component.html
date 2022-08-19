@@ -1,32 +1,27 @@
 <div class="fluid-container">
   <div class="container">
-    <ng-container *ngIf="registerForm.get('email')?.untouched">
-      <p class="form-messages">
-        Welcome The Customer Management
-      </p>
-    </ng-container>
-    <ng-container *ngIf="registerForm.get('email')?.invalid">
-      <div>
+    <div class="form-area">
+      <ng-container *ngIf="registerForm.get('email')?.pristine">
         <p class="form-messages">
-          Please Enter A Valid Email Adress
+          Welcome The Customer Management
         </p>
-      </div>
-    </ng-container>
-    <ng-container *ngIf="registerForm.get('email')?.touched&&registerForm.get('email')?.invalid">
-      <div>
-        <p class="form-messages">
-          Please Enter A Valid Email Adress
-        </p>
-      </div>
-    </ng-container>
-    <ng-container *ngIf="registerForm.get('password')?.invalid&&
+      </ng-container>
+      <ng-container *ngIf="registerForm.get('email')?.dirty&&registerForm.get('email')?.invalid">
+        <div>
+          <p class="form-messages">
+            Please Enter A Valid Email Adress
+          </p>
+        </div>
+      </ng-container>
+      <ng-container *ngIf="registerForm.get('password')?.dirty&&
 registerForm.get('password')?.invalid ">
-      <div>
-        <p class="form-messages">
-          Password Is Too Short
-        </p>
-      </div>
-    </ng-container>
+        <div>
+          <p class="form-messages">
+            Password Is Too Short
+          </p>
+        </div>
+      </ng-container>
+    </div>
     <form [formGroup]="registerForm">
       <div class="form-info">
         <label>Email Adress</label>

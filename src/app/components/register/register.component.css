@@ -1,6 +1,8 @@
 .fluid-container {
     display: flex;
     flex-direction: row;
+    width: 100vw;
+    overflow: hidden;
 }
 
 .container {
@@ -50,11 +52,11 @@ input::placeholder {
 
 .btn-login {
     width: 100%;
-    height: 46px;
+    height: 40px;
     margin-top: 20px;
     background-color: black;
     color: white;
-    font-size: 24px;
+    font-size: 18px;
     font-weight: 500;
     line-height: 1;
     border-radius: 20px;
@@ -102,6 +104,11 @@ input::placeholder {
     text-decoration: underline;
 }
 
+.form-area {
+    height: 50px;
+    margin-bottom: 10px;
+}
+
 
 
 /* Mobil */
@@ -122,5 +129,14 @@ input::placeholder {
     input {
         width: 200px;
         height: 20px;
+    }
+    .btn-login {
+        margin-top: 10px;
+        font-size: 14px;
+        height: 35px;
+    }
+    input::placeholder {
+        font-size: 14px;
+        text-transform: capitalize;
     }
 }
