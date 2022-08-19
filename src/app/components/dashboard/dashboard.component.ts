@@ -29,7 +29,7 @@ export class DashboardComponent implements OnInit {
   constructor(private auth: AuthService, private data: DataService) { }
 
   ngOnInit(): void {
-    this.getAllStudents();
+    this.getAllCustomers();
   }
 
   //Logout
@@ -37,9 +37,7 @@ export class DashboardComponent implements OnInit {
     this.auth.logout();
   }
 
-
-  getAllStudents() {
-
+  getAllCustomers() {
     this.data.getAllCustomers().subscribe(res => {
 
       this.customersList = res.map((e: any) => {
@@ -86,7 +84,6 @@ export class DashboardComponent implements OnInit {
     }
   }
 
-
-  displayedColumns: string[] = ['firstname', 'lastname', 'email', 'phone','actions'];
+  displayedColumns: string[] = ['firstname', 'lastname', 'email', 'phone', 'actions'];
 
 }
