@@ -28,14 +28,49 @@ table {
     font-weight: 500;
     opacity: 0.8;
 }
-.delete-btn:focus{
-    transform: scale(0.98);
+.btn-add{
+    width: 128px;
+    height: 40px;
+    margin-left: 10px;
+    border-radius: 20px;
+    border: none;
+    background: green;
+    color: white;
+    font-size: 16px;
+    
 }
 
+.delete-btn,.btn-add:focus{
+    transform: scale(0.98);
+}
+.form-addCustomer{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 15px 0;
+    margin-bottom: 40px;
+}
+input{
+    height: 20px;
+    border-radius: 5px;
+    font-size: 16px;
+    font-weight: 500;
+}
+.header-add{
+    font-weight: 500;
+    font-size: 2rem;
+    margin-bottom: 0;
+    margin-top: 10px;
+}
+label{
+    font-size: 16px;
+    font-weight: 400;
+    margin: 0 5px;
+}
 /*Media quaries*/
 @media(max-width:900px){
     h1{
-        font-size: 1.2rem;
+        font-size: 1.2rem !important;
     }
     h2{font-size: 1rem;}
 }
