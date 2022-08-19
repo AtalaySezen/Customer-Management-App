@@ -11,19 +11,26 @@
     flex: 1 1 auto;
 }
 
-.navBlack{
+.navBlack {
     background-color: black !important;
+    border-bottom: 2px solid white;
 }
 
-.home{
+.home {
     cursor: pointer;
 }
 
 
 /*Media quaries*/
-@media(max-width:900px){
-    h1{
+@media(max-width:900px) {
+    h1 {
         font-size: 1.2rem;
     }
-    h2{font-size: 1rem;}
+
+    h2 {
+        font-size: 0.8rem;
+    }
+    .example-icon{
+        margin: 0;
+    }
 }

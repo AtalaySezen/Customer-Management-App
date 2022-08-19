@@ -14,7 +14,23 @@
 .navBlack{
     background-color: black !important;
 }
-
+table {
+    width: 100%;
+  }
+.delete-btn{
+    width: 50%;
+    height: 30px;
+    border-radius: 10px;
+    border: none;
+    background: red;
+    color: white;
+    font-size: 16px;
+    font-weight: 500;
+    opacity: 0.8;
+}
+.delete-btn:focus{
+    transform: scale(0.98);
+}
 
 /*Media quaries*/
 @media(max-width:900px){

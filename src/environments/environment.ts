@@ -9,8 +9,8 @@ export const environment = {
     projectId: "customer-management-service",
     storageBucket: "customer-management-service.appspot.com",
     messagingSenderId: "323743143131",
-    appId: "1:323743143131:web:69cc35673ead31d44328fe",
-    measurementId: "G-9C2S6KV0ZN"
+    appId: "1:323743143131:web:d72cb82d800d28e34328fe",
+    measurementId: "G-MZB6R8CM4C"
   },
   production: false
 };
