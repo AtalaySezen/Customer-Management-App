@@ -26,23 +26,21 @@ export class DashboardComponent implements OnInit {
   last_name: string = '';
   email: string = '';
   mobile: string = '';
-  table='table'
-  darkMode:boolean=false;
+  table = 'table'
+  darkMode: boolean = false;
+  showSpinner: boolean = true;
 
   constructor(private auth: AuthService, private data: DataService) { }
   ngOnInit(): void {
     this.getAllCustomers();
-      // let darkMode = localStorage.getItem('darkMode');
-      // if (darkMode === "true") 
-      // {
-      //   this.table = 'table-red'
-      // }else {
-      //   this.table = 'table';
-      // }
-     
-
+    // let darkMode = localStorage.getItem('darkMode');
+    // if (darkMode === "true") 
+    // {
+    //   this.table = 'table-red'
+    // }else {
+    //   this.table = 'table';
+    // }
   }
- 
 
   //Logout
   register() {
@@ -51,7 +49,7 @@ export class DashboardComponent implements OnInit {
 
   getAllCustomers() {
     this.data.getAllCustomers().subscribe(res => {
-
+      this.showSpinner = false
       this.customersList = res.map((e: any) => {
         const data = e.payload.doc.data();
         data.id = e.payload.doc.id;
@@ -94,6 +92,14 @@ export class DashboardComponent implements OnInit {
   deleteCustomer(customer: Customers) {
     if (window.confirm('OK?' + customer.first_name + 'OK?' + customer.last_name + '?')) {
       this.data.deleteCustomer(customer);
+    }
+  }
+  hide = ''
+  hideTable() {
+    if (this.hide === '') {
+      this.hide = 'none'
+    } else {
+      this.hide = '';
     }
   }
 

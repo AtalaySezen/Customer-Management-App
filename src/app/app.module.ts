@@ -19,6 +19,7 @@ import {MatSidenavModule} from '@angular/material/sidenav';
 import { UsersInfoComponent } from './components/users-info/users-info.component';
 import { NavbarComponent } from './components/navbar/navbar.component';
 import { ReactiveFormsModule } from "@angular/forms";
+import { SpinnerComponent } from './components/spinner/spinner.component';
 
 
 
@@ -30,6 +31,7 @@ import { ReactiveFormsModule } from "@angular/forms";
     DashboardComponent,
     UsersInfoComponent,
     NavbarComponent,
+    SpinnerComponent,
   ],
   imports: [
     ReactiveFormsModule,

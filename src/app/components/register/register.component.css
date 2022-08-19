@@ -130,11 +130,13 @@ input::placeholder {
         width: 200px;
         height: 20px;
     }
+
     .btn-login {
         margin-top: 10px;
         font-size: 14px;
         height: 35px;
     }
+
     input::placeholder {
         font-size: 14px;
         text-transform: capitalize;

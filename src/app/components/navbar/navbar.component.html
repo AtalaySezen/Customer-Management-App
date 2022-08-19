@@ -1,36 +1,36 @@
 <section class="container">
-    <div class="dashboard-hero">
-      <header class="dashboard-header">
-        <mat-toolbar color="primary" [class]="navDark">
-          <h2 routerLink="/dashboard" class="home">Customer Management</h2>
-          <span class="example-spacer"></span>
-          <button routerLink="/dashboard" mat-icon-button class="example-icon" aria-label="Example icon-button with heart icon">
-            <mat-icon>home</mat-icon>
-          </button>
-          <button  mat-icon-button class="example-icon"
-          aria-label="Example icon-button with share icon">
+  <div class="dashboard-hero">
+    <header class="dashboard-header">
+      <mat-toolbar color="primary" [class]="navDark">
+        <h2 routerLink="/dashboard" class="home">Customer Management</h2>
+        <span class="example-spacer"></span>
+        <button routerLink="/dashboard" mat-icon-button class="example-icon"
+          aria-label="Example icon-button with heart icon">
+          <mat-icon>home</mat-icon>
+        </button>
+        <button mat-icon-button class="example-icon" aria-label="Example icon-button with share icon">
           <mat-icon>search</mat-icon>
         </button>
-          <ng-container *ngIf="!darkMode">
-            <button (click)="enableDarkMode()" mat-icon-button class="example-icon"
-              aria-label="Example icon-button with share icon">
-              <mat-icon>bedtime</mat-icon>
-            </button>
-          </ng-container>
-          <ng-container *ngIf="darkMode">
-            <button (click)=" disableDarkMode()" mat-icon-button class="example-icon"
-              aria-label="Example icon-button with share icon">
-              <mat-icon>sunny</mat-icon>
-            </button>
-          </ng-container>
-          <button routerLink="/users"  mat-icon-button class="example-icon"
+        <ng-container *ngIf="!darkMode">
+          <button (click)="enableDarkMode()" mat-icon-button class="example-icon"
             aria-label="Example icon-button with share icon">
-            <mat-icon> manage_accounts</mat-icon>
+            <mat-icon>bedtime</mat-icon>
           </button>
-          <button mat-icon-button class="example-icon" aria-label="Example icon-button with share icon">
-            <mat-icon (click)="register()"> logout</mat-icon>
+        </ng-container>
+        <ng-container *ngIf="darkMode">
+          <button (click)=" disableDarkMode()" mat-icon-button class="example-icon"
+            aria-label="Example icon-button with share icon">
+            <mat-icon>sunny</mat-icon>
           </button>
-        </mat-toolbar>
-      </header>
-    </div>
-  </section>
+        </ng-container>
+        <button routerLink="/users" mat-icon-button class="example-icon"
+          aria-label="Example icon-button with share icon">
+          <mat-icon> manage_accounts</mat-icon>
+        </button>
+        <button mat-icon-button class="example-icon" aria-label="Example icon-button with share icon">
+          <mat-icon (click)="register()"> logout</mat-icon>
+        </button>
+      </mat-toolbar>
+    </header>
+  </div>
+</section>
