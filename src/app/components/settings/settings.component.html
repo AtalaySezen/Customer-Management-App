@@ -1,0 +1,41 @@
+<app-navbar></app-navbar>
+<div class="container">
+    <header class="settings-header">
+        <h1 class="settings">Settings</h1>
+        <app-weather></app-weather>
+    </header>
+    <mat-accordion>
+        <mat-expansion-panel hideToggle>
+            <mat-expansion-panel-header>
+                <mat-panel-title>
+                    Fonts Settings
+                </mat-panel-title>
+                <mat-panel-description>
+                    If you want bigger fonts, we have.
+                </mat-panel-description>
+            </mat-expansion-panel-header>
+            <div class="btn-size">
+                <button class="btn-sizer" (click)="smallSize()">Smaller</button>
+                <button class="btn-sizer" (click)="defaultSize()">Default</button>
+                <button [disabled]="mobile" class="btn-sizer" (click)="biggerSize()">Bigger</button>
+            </div>
+        </mat-expansion-panel>
+        <mat-expansion-panel>
+            <mat-expansion-panel-header>
+                <mat-panel-title>
+                    Font Family
+                </mat-panel-title>
+                <mat-panel-description>
+                    Font family
+                </mat-panel-description>
+            </mat-expansion-panel-header>
+            <div class="btn-size">
+                <button class="btn-sizer" (click)="poppinsFont()">Google Poppins</button>
+                <button class="btn-sizer" (click)="robotoFont()">Google Roboto(Default)</button>
+                <button class="btn-sizer" (click)="latoFont()">Google Lato</button>
+            </div>
+        </mat-expansion-panel>
+    </mat-accordion>
+
+
+</div>

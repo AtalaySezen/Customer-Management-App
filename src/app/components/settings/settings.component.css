@@ -1,0 +1,34 @@
+.container{
+    width: 100%;
+    text-align: center;
+}
+.settings{
+    margin-top: 10px;
+}
+
+.btn-size{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    text-align: center;
+    width: 100%;
+}
+.btn-sizer{
+    flex: 1;
+    border: none;
+    height: 30px;
+    margin: 0 5px;
+    background-color: mistyrose;
+    font-size: 16px;
+    font-weight: 500;
+    border-radius: 10px;
+}
+.btn-sizer:focus{
+    transform: scale(0.98);
+}
+
+@media(max-width:800px){
+    .btn-sizer{
+        font-size: 9px !important;
+    }
+}
