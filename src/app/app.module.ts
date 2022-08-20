@@ -22,7 +22,10 @@ import { ReactiveFormsModule } from "@angular/forms";
 import { SpinnerComponent } from './components/spinner/spinner.component';
 import { CalendarComponent } from './components/calendar/calendar.component';
 import { NgxMaskModule, IConfig } from 'ngx-mask';
-import { WeatherComponent } from './components/weather/weather.component'
+import { WeatherComponent } from './components/weather/weather.component';
+import { SettingsComponent } from './components/settings/settings.component'
+import { MatExpansionModule } from '@angular/material/expansion';
+import { MatSelectModule } from '@angular/material/select';
 
 
 
@@ -37,6 +40,7 @@ import { WeatherComponent } from './components/weather/weather.component'
     SpinnerComponent,
     CalendarComponent,
     WeatherComponent,
+    SettingsComponent,
   ],
   imports: [
     ReactiveFormsModule,
@@ -53,6 +57,8 @@ import { WeatherComponent } from './components/weather/weather.component'
     MatTableModule,
     MatSidenavModule,
     NgxMaskModule.forRoot(),
+    MatExpansionModule,
+    MatSelectModule
 
   ],
   providers: [],

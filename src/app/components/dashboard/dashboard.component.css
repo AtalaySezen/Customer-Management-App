@@ -16,7 +16,7 @@
 }
 
 .delete {
-    color: red;
+    color: #ef5350;
 }
 
 
@@ -29,25 +29,18 @@
     justify-content: center;
     align-items: center;
     margin: 15px 0;
-    margin-bottom: 40px;
+    margin-bottom: 5px;
 }
 
 input {
-    height: 20px;
-    border-radius: 5px;
-    font-size: 16px;
+    font-size: 14px;
     font-weight: 500;
-}
-
-.header-add {
-    font-weight: 500;
-    font-size: 2rem;
-    margin-bottom: 0;
-    margin-top: 10px;
+    /* box-shadow: rgb(100 100 111 / 20%) 0px 7px 29px 0px;     */
+    padding: 2px 5px;
 }
 
 label {
-    font-size: 16px;
+    font-size: 14px;
     font-weight: 400;
     margin: 0 5px;
 }

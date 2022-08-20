@@ -3,6 +3,7 @@ import { AuthService } from 'src/app/shared/auth.service';
 import { Customers } from 'src/app/model/customers';
 import { DataService } from 'src/app/shared/data.service';
 import { BrowserDynamicTestingModule } from '@angular/platform-browser-dynamic/testing';
+import { getAuth } from "firebase/auth";
 
 @Component({
   selector: 'app-dashboard',
@@ -10,6 +11,7 @@ import { BrowserDynamicTestingModule } from '@angular/platform-browser-dynamic/t
   styleUrls: ['./dashboard.component.css']
 })
 export class DashboardComponent implements OnInit {
+
   //Customer table
   customersList: Customers[] = [];
 
@@ -52,7 +54,9 @@ export class DashboardComponent implements OnInit {
       })
 
     }, err => {
+      err.alert('kötü')
       alert('Error while fetching customer data');
+      console.log('kötü')
     })
 
 
@@ -65,14 +69,24 @@ export class DashboardComponent implements OnInit {
     this.email = '';
     this.mobile = '';
   }
+  errorMessage = 'none'
+
+  error() {
+    this.errorMessage = 'error'
+    setTimeout(() => {
+      this.errorMessage = 'none'
+    }, 2000);
+  }
+
 
   //add customers 
   addCustomer() {
     if (this.first_name === "" || this.last_name === "" || this.email === "" || this.mobile === "") {
-      alert("please fill ")
+      this.error()
       //Alert class
       return false
     } else {
+      this.errorMessage = 'none'
       this.customerObj.id = '';
       this.customerObj.email = this.email;
       this.customerObj.first_name = this.first_name;
@@ -93,19 +107,25 @@ export class DashboardComponent implements OnInit {
 
   //Delete customer
   deleteCustomer(customer: Customers) {
-    if (window.confirm('OK?' + customer.first_name + 'OK?' + customer.last_name + '?')) {
+    if (window.confirm('Sure delete' + ' ' + customer.first_name + ' ' + customer.last_name + '?')) {
       this.data.deleteCustomer(customer);
     }
   }
   //Hide table function
   hide = ''
+  visibility: boolean = false;
   hideTable() {
     if (this.hide === '') {
       this.hide = 'none'
+      this.visibility = true;
     } else {
       this.hide = '';
+      this.visibility = false;
     }
   }
+
+
+
 
   displayedColumns: string[] = ['firstname', 'lastname', 'email', 'phone', 'actions'];
 

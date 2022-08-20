@@ -16,7 +16,6 @@ export class NavbarComponent implements OnInit {
   darkMode: boolean = false;
   ngOnInit(): void {
     let darkMode = localStorage.getItem('darkMode');
-    console.log(darkMode)
     if (darkMode === "true") {
       document.body.classList.add("dark-theme");
       this.lightMode = 'white';
@@ -27,7 +26,27 @@ export class NavbarComponent implements OnInit {
       this.lightMode = ''
       this.darkMode = false;
     }
+    if (localStorage.getItem('fontSize') === "smallSize") {
+      document.querySelectorAll('*').forEach(tags => {
+        tags.classList.add('smallSize');
+      })
+    } else if (localStorage.getItem('fontSize') === "biggerSize") {
+      document.querySelectorAll('*').forEach(tags => {
+        tags.classList.add('biggerSize');
+      })
+    } else if (localStorage.getItem('fontFamily') === "lato") {
+      document.querySelectorAll('*').forEach(tags => {
+        tags.classList.add('lato');
+      })
+    } else if (localStorage.getItem('fontFamily') === "poppins") {
+      document.querySelectorAll('*').forEach(tags => {
+        tags.classList.add('poppins');
+      })
+
+    }
   }
+
+  
   //DarkMode
   enableDarkMode() {
     document.body.classList.add("dark-theme");

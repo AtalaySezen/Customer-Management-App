@@ -1,17 +1,16 @@
 <app-navbar></app-navbar>
 <section class="container">
-    <h1 class="header-add">Add Customer</h1>
     <div class="form-addCustomer">
         <div class="form-floating ">
-            <label for="firstname">First name</label>
+            <label for="firstname">Name</label>
             <input type="text" class="form-control" id="firstName" name="firstname" [(ngModel)]="first_name">
         </div>
         <div class="form-floating ">
-            <label for="lastName">Last name</label>
+            <label for="lastName">Surname</label>
             <input type="text" class="form-control" id="lastName" name="lastName" [(ngModel)]="last_name">
         </div>
-        <div class="form-floating ">""
-            <label for="email">Email address</label>
+        <div class="form-floating ">
+            <label for="email">Email</label>
             <input type="email" class="form-control" placeholder="dashboard@dashboard.com" id="email" name="email"
                 [(ngModel)]="email">
         </div>
@@ -20,13 +19,23 @@
             <input type="text" class="form-control" id="mobile" placeholder="(123) 456-7891" mask="(000) 000-0000"
                 name="mobile" [(ngModel)]="mobile">
         </div>
-        <button (click)="hideTable()" mat-icon-button class="icon" aria-label="Example icon-button with share icon">
-            <mat-icon>preview</mat-icon>
+        <ng-container *ngIf="!visibility">
+        <button (click)="hideTable()" mat-icon-button class="icon eye" aria-label="Example icon-button with share icon">
+            <mat-icon>visibility</mat-icon>
         </button>
+    </ng-container>
+    <ng-container *ngIf="visibility">
+        <button (click)="hideTable()" mat-icon-button class="icon eye" aria-label="Example icon-button with share icon">
+            <mat-icon>visibility_off</mat-icon>
+        </button>
+    </ng-container>
         <button (click)="addCustomer()" mat-icon-button class="icon add"
             aria-label="Example icon-button with share icon">
-            <mat-icon>add</mat-icon>
+            <mat-icon class="add">add</mat-icon>
         </button>
+    </div>
+    <div [class]="errorMessage">
+        Please Fill All The Areas
     </div>
     <app-spinner *ngIf="showSpinner"></app-spinner>
     <table *ngIf="!showSpinner" [class]="hide" class="table" mat-table [dataSource]="customersList"
