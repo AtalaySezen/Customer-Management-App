@@ -10,7 +10,7 @@ import { BrowserDynamicTestingModule } from '@angular/platform-browser-dynamic/t
   styleUrls: ['./dashboard.component.css']
 })
 export class DashboardComponent implements OnInit {
-
+  //Customer table
   customersList: Customers[] = [];
 
   customerObj: Customers = {
@@ -20,6 +20,7 @@ export class DashboardComponent implements OnInit {
     email: '',
     mobile: ''
   }
+
   //
   id: string = '';
   first_name: string = '';
@@ -33,13 +34,7 @@ export class DashboardComponent implements OnInit {
   constructor(private auth: AuthService, private data: DataService) { }
   ngOnInit(): void {
     this.getAllCustomers();
-    // let darkMode = localStorage.getItem('darkMode');
-    // if (darkMode === "true") 
-    // {
-    //   this.table = 'table-red'
-    // }else {
-    //   this.table = 'table';
-    // }
+
   }
 
   //Logout
@@ -49,7 +44,7 @@ export class DashboardComponent implements OnInit {
 
   getAllCustomers() {
     this.data.getAllCustomers().subscribe(res => {
-      this.showSpinner = false
+      this.showSpinner = false //Show spinner
       this.customersList = res.map((e: any) => {
         const data = e.payload.doc.data();
         data.id = e.payload.doc.id;
@@ -73,14 +68,22 @@ export class DashboardComponent implements OnInit {
 
   //add customers 
   addCustomer() {
-    this.customerObj.id = '';
-    this.customerObj.email = this.email;
-    this.customerObj.first_name = this.first_name;
-    this.customerObj.last_name = this.last_name;
-    this.customerObj.mobile = this.mobile;
+    if (this.first_name === "" || this.last_name === "" || this.email === "" || this.mobile === "") {
+      alert("please fill ")
+      //Alert class
+      return false
+    } else {
+      this.customerObj.id = '';
+      this.customerObj.email = this.email;
+      this.customerObj.first_name = this.first_name;
+      this.customerObj.last_name = this.last_name;
+      this.customerObj.mobile = this.mobile;
 
-    this.data.addCustomer(this.customerObj);
-    this.resetForm();
+      this.data.addCustomer(this.customerObj);
+      this.resetForm();
+      return true
+    }
+
   }
 
   //update Customer
@@ -94,6 +97,7 @@ export class DashboardComponent implements OnInit {
       this.data.deleteCustomer(customer);
     }
   }
+  //Hide table function
   hide = ''
   hideTable() {
     if (this.hide === '') {

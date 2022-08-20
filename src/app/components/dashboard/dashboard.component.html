@@ -1,10 +1,7 @@
 <app-navbar></app-navbar>
-
 <section class="container">
     <h1 class="header-add">Add Customer</h1>
     <div class="form-addCustomer">
-        <div class="form-floating">
-        </div>
         <div class="form-floating ">
             <label for="firstname">First name</label>
             <input type="text" class="form-control" id="firstName" name="firstname" [(ngModel)]="first_name">
@@ -13,29 +10,34 @@
             <label for="lastName">Last name</label>
             <input type="text" class="form-control" id="lastName" name="lastName" [(ngModel)]="last_name">
         </div>
-        <div class="form-floating ">
+        <div class="form-floating ">""
             <label for="email">Email address</label>
-            <input type="email" class="form-control" id="email" name="email" [(ngModel)]="email">
+            <input type="email" class="form-control" placeholder="dashboard@dashboard.com" id="email" name="email"
+                [(ngModel)]="email">
         </div>
         <div class="form-floating ">
             <label for="mobile">Mobile</label>
-            <input type="text" class="form-control" id="mobile" name="mobile" [(ngModel)]="mobile">
+            <input type="text" class="form-control" id="mobile" placeholder="(123) 456-7891" mask="(000) 000-0000"
+                name="mobile" [(ngModel)]="mobile">
         </div>
         <button (click)="hideTable()" mat-icon-button class="icon" aria-label="Example icon-button with share icon">
             <mat-icon>preview</mat-icon>
         </button>
-        <button type="button" class="btn-add" (click)="addCustomer()">Add Customer</button>
+        <button (click)="addCustomer()" mat-icon-button class="icon add"
+            aria-label="Example icon-button with share icon">
+            <mat-icon>add</mat-icon>
+        </button>
     </div>
     <app-spinner *ngIf="showSpinner"></app-spinner>
     <table *ngIf="!showSpinner" [class]="hide" class="table" mat-table [dataSource]="customersList"
         lass="mat-elevation-z8">
         <ng-container matColumnDef="firstname">
             <th mat-header-cell *matHeaderCellDef> Customer Name</th>
-            <td mat-cell *matCellDef="let customer"> {{customer.first_name}} </td>
+            <td mat-cell *matCellDef="let customer"> {{customer.first_name|titlecase}} </td>
         </ng-container>
         <ng-container matColumnDef="lastname">
             <th mat-header-cell *matHeaderCellDef> Customer Last Name</th>
-            <td mat-cell *matCellDef="let customer"> {{customer.last_name}} </td>
+            <td mat-cell *matCellDef="let customer"> {{customer.last_name|titlecase}} </td>
         </ng-container>
         <ng-container matColumnDef="email">
             <th mat-header-cell *matHeaderCellDef> Customer`s Email </th>
@@ -48,7 +50,10 @@
         <ng-container matColumnDef="actions">
             <th mat-header-cell *matHeaderCellDef> Actions</th>
             <td mat-cell *matCellDef="let customer">
-                <button class="delete-btn" (click)="deleteCustomer(customer)">Delete</button>
+                <button (click)="deleteCustomer(customer)" mat-icon-button class="icon delete"
+                    aria-label="Example icon-button with share icon">
+                    <mat-icon>delete</mat-icon>
+                </button>
             </td>
         </ng-container>
         <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
