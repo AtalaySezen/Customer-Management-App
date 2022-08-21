@@ -3,6 +3,9 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,300;0,400;0,500;0,600;0,700;1,200;1,300;1,400;1,600;1,700&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;1,100;1,300;1,400;1,700&display=swap');
 
+/*Calendar CSS Import */
+@import "../node_modules/angular-calendar/css/angular-calendar.css";
+
 html,
 body {
   height: 100%;
@@ -36,6 +39,7 @@ p {
 
 body {
   --text-color: #222;
+  --btn-bg: mistyrose;
   --bkg-color: #fff;
   --btn-txt-color: white;
   --btn-bg-color: rgb(11, 88, 160);
@@ -43,6 +47,7 @@ body {
   width: 100%;
   --icon-bg: black;
 }
+
 
 .dark-theme {
   --text-color: #eee;
@@ -53,6 +58,12 @@ body {
   --btn-bg-color: rgb(20, 211, 195);
   --border-table: white;
   --icon-bg: white;
+  --btn-bg: white;
+
+}
+
+.text {
+  color: var(--text-color);
 }
 
 .smallSize {
@@ -75,6 +86,14 @@ input {
   color: var(--text-color);
 }
 
+/*Dashboard*/
+.date-message {
+  color: var(--text-color);
+  font-weight: 500;
+  font-size: 16px;
+  padding-top: 5px;
+}
+
 .form-messages {
   font-size: 18px;
   font-weight: 500;
@@ -91,6 +110,24 @@ th {
   color: var(--text-color) !important;
   border-color: var(--border-table) !important;
 }
+
+
+/*Settings */
+.mat-expansion {
+  background-color: var(--bkg-color) !important;
+}
+
+.btn-sizer {
+  flex: 1;
+  border: none;
+  height: 30px;
+  margin: 0 5px;
+  background-color: var(--btn-bg);
+  font-size: 16px;
+  font-weight: 500;
+  border-radius: 10px;
+}
+
 
 /*Navbar icons*/
 .icon {
@@ -137,6 +174,7 @@ th {
 .lato {
   font-family: 'Lato', sans-serif;
 }
+
 
 .example-icon {
   background-color: transparent;

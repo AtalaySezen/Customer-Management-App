@@ -1,7 +1,7 @@
 <section class="container">
   <div class="dashboard-hero">
     <header class="dashboard-header">
-      <mat-toolbar color="primary" [class]="navDark">
+      <mat-toolbar [class]="color" [color]="color" [class]="navDark">
         <h2 routerLink="/dashboard" class="home">Customer Management</h2>
         <span class="example-spacer"></span>
         <button routerLink="/dashboard" mat-icon-button class="example-icon"
@@ -28,7 +28,9 @@
           aria-label="Example icon-button with share icon">
           <mat-icon>calendar_month</mat-icon>
         </button>
-     
+        <!-- <button mat-icon-button class="example-icon" aria-label="Example icon-button with share icon" >
+          <mat-icon>palette</mat-icon>
+      </button> -->
         <button routerLink="/users" mat-icon-button class="example-icon"
           aria-label="Example icon-button with share icon">
           <mat-icon> manage_accounts</mat-icon>

@@ -5,12 +5,12 @@
         <app-weather></app-weather>
     </header>
     <mat-accordion>
-        <mat-expansion-panel hideToggle>
-            <mat-expansion-panel-header>
-                <mat-panel-title>
+        <mat-expansion-panel hideToggle class="mat-expansion">
+            <mat-expansion-panel-header class="mat-expansion">
+                <mat-panel-title class="text">
                     Fonts Settings
                 </mat-panel-title>
-                <mat-panel-description>
+                <mat-panel-description class="text">
                     If you want bigger fonts, we have.
                 </mat-panel-description>
             </mat-expansion-panel-header>
@@ -20,12 +20,12 @@
                 <button [disabled]="mobile" class="btn-sizer" (click)="biggerSize()">Bigger</button>
             </div>
         </mat-expansion-panel>
-        <mat-expansion-panel>
-            <mat-expansion-panel-header>
-                <mat-panel-title>
+        <mat-expansion-panel class="mat-expansion">
+            <mat-expansion-panel-header class="mat-expansion">
+                <mat-panel-title class="text">
                     Font Family
                 </mat-panel-title>
-                <mat-panel-description>
+                <mat-panel-description class="text">
                     Font family
                 </mat-panel-description>
             </mat-expansion-panel-header>

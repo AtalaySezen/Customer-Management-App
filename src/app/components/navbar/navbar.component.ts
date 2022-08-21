@@ -11,6 +11,7 @@ export class NavbarComponent implements OnInit {
   constructor(private auth: AuthService) { }
   lightMode = '';
   navDark = '';
+  color='primary';
 
   //DarkMode Icon
   darkMode: boolean = false;
@@ -42,11 +43,12 @@ export class NavbarComponent implements OnInit {
       document.querySelectorAll('*').forEach(tags => {
         tags.classList.add('poppins');
       })
-
     }
+    //
+   
   }
 
-  
+
   //DarkMode
   enableDarkMode() {
     document.body.classList.add("dark-theme");
@@ -67,6 +69,22 @@ export class NavbarComponent implements OnInit {
   register() {
     this.auth.logout();
   }
-
+  // colorChange() {
+  //   if (this.color === 'primary') {
+  //     this.color = 'warn';
+  //     localStorage.setItem('navColor','warn');
+  //   } else if (this.color === 'warn') {
+  //     this.color = 'accent'
+  //     localStorage.setItem('navColor','accent');
+  //   } else if (this.color === 'accent') {
+  //     this.color = 'basic';
+  //     localStorage.setItem('navColor','basic');
+  //   } else if (this.color === 'basic') {
+  //     this.color = 'primary';
+  //     localStorage.setItem('navColor','primary');
+  //   }
+  // }
 
 }
+
+

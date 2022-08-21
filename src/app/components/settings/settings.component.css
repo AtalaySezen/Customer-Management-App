@@ -13,16 +13,7 @@
     text-align: center;
     width: 100%;
 }
-.btn-sizer{
-    flex: 1;
-    border: none;
-    height: 30px;
-    margin: 0 5px;
-    background-color: mistyrose;
-    font-size: 16px;
-    font-weight: 500;
-    border-radius: 10px;
-}
+
 .btn-sizer:focus{
     transform: scale(0.98);
 }

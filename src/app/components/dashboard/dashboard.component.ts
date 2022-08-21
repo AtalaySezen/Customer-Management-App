@@ -36,7 +36,21 @@ export class DashboardComponent implements OnInit {
   constructor(private auth: AuthService, private data: DataService) { }
   ngOnInit(): void {
     this.getAllCustomers();
+    this.welcome()
+  }
+  welcomeMessage = new Date();
+  hiMessage='';
 
+  welcome() {
+    let date = new Date();
+    let time = date.getHours();
+    if(time<12){
+      this.hiMessage='Good Morning Today Is' + ' ';
+    }else if(time<19){
+      this.hiMessage='Good Afternoon Today Is' + ' ';
+    }else if(time>19){
+      this.hiMessage = 'Good Evening';
+    }
   }
 
   //Logout
