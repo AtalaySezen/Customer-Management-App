@@ -17,7 +17,7 @@ body {
 }
 
 p {
-  font-size: 16px;
+  font-size: 14px;
 }
 
 a,
@@ -41,6 +41,7 @@ body {
   --text-color: #222;
   --btn-bg: mistyrose;
   --bkg-color: #fff;
+  --input-color: black;
   --btn-txt-color: white;
   --btn-bg-color: rgb(11, 88, 160);
   --border-table: rgba(0, 0, 0, 0.12);
@@ -59,6 +60,7 @@ body {
   --border-table: white;
   --icon-bg: white;
   --btn-bg: white;
+  --input-color: black;
 
 }
 
@@ -81,17 +83,25 @@ body {
 
 h1,
 p,
-label,
+label {
+  color: var(--text-color) !important;
+}
+
 input {
-  color: var(--text-color);
+  color: var(--input-color);
+}
+
+input:focus {
+  border: none;
+  border-color: none;
 }
 
 /*Dashboard*/
-.date-message {
+.data-message {
   color: var(--text-color);
   font-weight: 500;
-  font-size: 16px;
-  padding-top: 5px;
+  margin-bottom: 0 !important;
+  margin-top: 5px !important;
 }
 
 .form-messages {

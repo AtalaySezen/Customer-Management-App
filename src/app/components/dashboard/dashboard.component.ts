@@ -39,17 +39,17 @@ export class DashboardComponent implements OnInit {
     this.welcome()
   }
   welcomeMessage = new Date();
-  hiMessage='';
+  hiMessage = '';
 
   welcome() {
     let date = new Date();
     let time = date.getHours();
-    if(time<12){
-      this.hiMessage='Good Morning Today Is' + ' ';
-    }else if(time<19){
-      this.hiMessage='Good Afternoon Today Is' + ' ';
-    }else if(time>19){
-      this.hiMessage = 'Good Evening';
+    if (time < 12) {
+      this.hiMessage = 'Good Morning Today Is' + ' ';
+    } else if (time < 19) {
+      this.hiMessage = 'Good Afternoon Today Is' + ' ';
+    } else if (time > 19) {
+      this.hiMessage = 'Good Evening Today';
     }
   }
 
@@ -72,8 +72,6 @@ export class DashboardComponent implements OnInit {
       alert('Error while fetching customer data');
       console.log('kötü')
     })
-
-
   }
 
   resetForm() {
@@ -111,7 +109,6 @@ export class DashboardComponent implements OnInit {
       this.resetForm();
       return true
     }
-
   }
 
   //update Customer

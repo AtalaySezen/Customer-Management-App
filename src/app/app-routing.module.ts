@@ -6,7 +6,6 @@ import { LoginComponent } from './components/login/login.component';
 import { RegisterComponent } from './components/register/register.component';
 import { SettingsComponent } from './components/settings/settings.component';
 import { UsersInfoComponent } from './components/users-info/users-info.component';
-import { WeatherComponent } from './components/weather/weather.component';
 import { DashboardGuard } from './shared/dashboard.guard';
 
 const routes: Routes = [
@@ -15,9 +14,8 @@ const routes: Routes = [
   { path: 'dashboard', component: DashboardComponent, canActivate: [DashboardGuard] },
   { path: 'register', component: RegisterComponent },
   { path: 'users', component: UsersInfoComponent, canActivate: [DashboardGuard] },
-  {path:'calendar',component:CalendarComponent,canActivate:[DashboardGuard]},
-  {path:'settings',component:SettingsComponent,canActivate:[DashboardGuard]},
-
+  { path: 'calendar', component: CalendarComponent, canActivate: [DashboardGuard] },
+  { path: 'settings', component: SettingsComponent, canActivate: [DashboardGuard] },
 ];
 
 @NgModule({

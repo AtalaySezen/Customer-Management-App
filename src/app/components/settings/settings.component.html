@@ -1,9 +1,12 @@
 <app-navbar></app-navbar>
 <div class="container">
     <header class="settings-header">
-        <h1 class="settings">Settings</h1>
-        <app-weather></app-weather>
+        <!-- <h1 class="settings">Settings</h1> -->
+        <!-- <p class="settings-info">
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Facere, optio quis quas nisi hic dolore sequi enim animi recusandae temporibus architecto cumque. Accusantium fugit commodi voluptate minus. Ullam possimus eum consectetur voluptate incidunt consequatur praesentium? Voluptates exercitationem fugit nostrum. Dicta, beatae? Sapiente quibusdam sunt officiis, enim consequuntur iure. Fugiat, maiores!3
+        </p> -->
     </header>
+    <app-weather ></app-weather>
     <mat-accordion>
         <mat-expansion-panel hideToggle class="mat-expansion">
             <mat-expansion-panel-header class="mat-expansion">
@@ -33,6 +36,22 @@
                 <button class="btn-sizer" (click)="poppinsFont()">Google Poppins</button>
                 <button class="btn-sizer" (click)="robotoFont()">Google Roboto(Default)</button>
                 <button class="btn-sizer" (click)="latoFont()">Google Lato</button>
+            </div>
+        </mat-expansion-panel>
+        <mat-expansion-panel class="mat-expansion">
+            <mat-expansion-panel-header class="mat-expansion">
+                <mat-panel-title class="text">
+                    Weather
+                </mat-panel-title>
+                <mat-panel-description class="text">
+                    Weather Settings
+                </mat-panel-description>
+            </mat-expansion-panel-header>
+            <div class="change-weather">
+            <label>City:</label>
+            <input type="text">
+            <button (click)="changeCity()">Change City</button>
+            <button>Hide Weather Widget</button>
             </div>
         </mat-expansion-panel>
     </mat-accordion>

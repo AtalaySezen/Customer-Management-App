@@ -34,9 +34,11 @@ export class WeatherComponent implements OnInit {
     this.getWeatherData();
     console.log(this.WeatherData);
   }
+  //City info
+  cityInfo = 'istanbul'
 
   getWeatherData() {
-    fetch('https://api.openweathermap.org/data/2.5/weather?q=istanbul&appid=5ac25577e127a85829dd2e4d73736bc4')
+    fetch(`https://api.openweathermap.org/data/2.5/weather?q=${this.cityInfo}&appid=5ac25577e127a85829dd2e4d73736bc4`)
       .then(response => response.json())
       .then(data => {
         this.setWeatherData(data), console.log(data);

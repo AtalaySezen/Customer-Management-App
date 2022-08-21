@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 
 @Component({
   selector: 'app-settings',
@@ -80,5 +80,9 @@ export class SettingsComponent implements OnInit {
       localStorage.setItem('fontFamily', 'lato');
     })
   }
+  //Weather City
 
+  changeCity(){
+    
+  }
 }
