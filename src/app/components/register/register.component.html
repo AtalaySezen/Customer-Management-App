@@ -31,10 +31,7 @@ registerForm.get('password')?.invalid ">
         <label>Password</label>
         <input formControlName="password" type="password" name="password" [(ngModel)]="password" placeholder="password">
       </div>
-      <button class="btn-login" [disabled]="!registerForm.valid" (click)="register()">Register</button>
+      <button class="btn-login" [disabled]="!registerForm.valid" (click)="register()">Sign Up</button>
     </form>
-  </div>
-  <div class="rightside">
-    <h1 class="header-right">Customer Management Register</h1>
   </div>
 </div>

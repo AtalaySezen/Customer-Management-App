@@ -1,42 +1,41 @@
 <div class="fluid-container">
-    <div class="container">
-        <form [formGroup]="formCard">
-            <div class="form-area">
-                <ng-container *ngIf="formCard.get('username')?.dirty&&formCard.get('username')?.invalid">
-                    <div>
-                        <p class="form-messages">
-                            Please Enter A Valid Email Adress
-                        </p>
-                    </div>
-                </ng-container>
-                <ng-container *ngIf="formCard.get('password')?.dirty&&
-            formCard.get('password')?.invalid ">
-                    <div>
-                        <p class="form-messages">
-                            Password Is Wrong
-                        </p>
-                    </div>
-                </ng-container>
-                <ng-container *ngIf="formCard.get('username')?.pristine&&formCard.get('password')?.pristine">
+    <form class="form" [formGroup]="formCard">
+        <div class="form-area">
+            <ng-container *ngIf="formCard.get('username')?.dirty&&formCard.get('username')?.invalid">
+                <div>
                     <p class="form-messages">
-                        Welcome The Customer Management
+                        Please Enter A Valid Email Adress
                     </p>
-                </ng-container>
-            </div>
-            <div class="form-info">
-                <label>Email Adress</label>
-                <input formControlName="username" name="email" type="email" placeholder="email" [(ngModel)]="email">
-            </div>
-            <div class="form-info">
-                <label>Password</label>
-                <input formControlName="password" type="password" placeholder="password" [(ngModel)]="password">
-            </div>
-            <button class="btn-login" [disabled]="!formCard.valid" (click)="login()">Login</button>
-            <button class="btn-login" (click)="signInWithGoogle()">Sign With Google</button>
-            <a class="register" routerLink="/register">Register</a>
-        </form>
-    </div>
-    <div class="rightside">
-        <h1 class="header-right">Customer Management</h1>
-    </div>
+                </div>
+            </ng-container>
+            <ng-container *ngIf="formCard.get('password')?.dirty&&
+            formCard.get('password')?.invalid ">
+                <div>
+                    <p class="form-messages">
+                        Password Is Wrong
+                    </p>
+                </div>
+            </ng-container>
+            <ng-container *ngIf="formCard.get('username')?.pristine&&formCard.get('password')?.pristine">
+                <p class="form-messages">
+                    Welcome The Customer Management
+                </p>
+            </ng-container>
+        </div>
+        <div class="form-info">
+            <label>Email Adress</label>
+            <input formControlName="username" name="email" type="email" placeholder="email" [(ngModel)]="email">
+        </div>
+        <div class="form-info">
+            <label>Password</label>
+            <input formControlName="password" type="password" placeholder="password" [(ngModel)]="password">
+        </div>
+        <button class="btn-login" [disabled]="!formCard.valid" (click)="login()">Login</button>
+        <button type="button" class="login-with-google-btn">
+            Sign in with Google
+        </button>
+        <div class="register-btn">
+            <button class="register" routerLink="/register">Register An Account</button>
+        </div>
+    </form>
 </div>

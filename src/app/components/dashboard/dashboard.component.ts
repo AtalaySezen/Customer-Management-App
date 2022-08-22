@@ -37,6 +37,11 @@ export class DashboardComponent implements OnInit {
   ngOnInit(): void {
     this.getAllCustomers();
     this.welcome()
+    // this.getAll()
+
+  }
+  getAll(){
+    this.auth.getUserData();
   }
   welcomeMessage = new Date();
   hiMessage = '';

@@ -8,7 +8,6 @@ import { GoogleAuthProvider, FacebookAuthProvider, GithubAuthProvider } from '@a
   providedIn: 'root'
 })
 export class AuthService {
-  test = 'selam'
   constructor(private fireAuth: AngularFireAuth, private router: Router) { }
   //Login sistemi:
   login(email: string, password: string) {
@@ -17,6 +16,11 @@ export class AuthService {
       this.router.navigate(['dashboard']);
     }, err => {
       this.router.navigate(['/login']);
+      if (email != '' || password != '') {
+        alert("yanlış"); //Hata toastrları eklenecek.
+      } else {
+        alert("hatalı")
+      }
     })
   }
   //Register function
@@ -29,11 +33,19 @@ export class AuthService {
       this.router.navigate(['/register']);
     })
   }
+  //getuserdata
+  getUserData() {
+    // console.log(this.fireAuth.authState.forEach(e=>{
+    //   e?.providerId
+    // }))
+    // console.log(this.fireAuth.currentUser);
+    // console.log(this.fireAuth.authState)
+  }
 
   //Sign out; 
   logout() {
     this.fireAuth.signOut().then(() => {
-      localStorage.removeItem('token'); //token burada silinsin.
+      localStorage.removeItem('token'); //sadecetoken burada silinsin.
       this.router.navigate(['/login']);
     }, err => {
       alert(err.message);

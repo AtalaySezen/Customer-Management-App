@@ -58,7 +58,6 @@ export class SettingsComponent implements OnInit {
     }
   }
 
-
   //Font Change
   poppinsFont() {
     document.querySelectorAll('*').forEach(tags => {
