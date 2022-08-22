@@ -11,7 +11,7 @@ export class NavbarComponent implements OnInit {
   constructor(private auth: AuthService) { }
   lightMode = '';
   navDark = '';
-  color='primary';
+  color = 'primary';
 
   //DarkMode Icon
   darkMode: boolean = false;
@@ -44,8 +44,26 @@ export class NavbarComponent implements OnInit {
         tags.classList.add('poppins');
       })
     }
-    //
-   
+    //tool tips for user
+    this.showTools();
+
+
+  }
+
+  //Show tool tips for user
+  toolShow = 'tooltiptext'
+  showTools() {
+    if (localStorage.getItem("toolShow") != "true") {
+      this.toolShow = 'visibleTool';
+      //Hide auto
+      setTimeout(() => {
+        this.toolShow = 'tooltiptext';
+      }, 2000);
+      localStorage.setItem("toolShow", "true");
+    } else if (localStorage.getItem("toolShow") == "true") {
+      this.toolShow == 'tooltiptext'
+    }
+
   }
 
 

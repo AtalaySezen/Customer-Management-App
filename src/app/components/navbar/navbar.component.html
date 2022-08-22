@@ -15,24 +15,24 @@
           </button>
         </ng-container>
         <ng-container *ngIf="darkMode">
-          <button (click)=" disableDarkMode()" mat-icon-button class="example-icon"
+          <button (click)=" disableDarkMode()" mat-icon-button class="example-icon "
             aria-label="Example icon-button with share icon">
             <mat-icon>sunny</mat-icon>
           </button>
         </ng-container>
-        <button routerLink="/settings" mat-icon-button class="example-icon"
-        aria-label="Example icon-button with share icon">
-        <mat-icon>settings</mat-icon>
-      </button>
-        <button routerLink="/calendar" mat-icon-button class="example-icon"
+        <button routerLink="/settings" mat-icon-button class="example-icon tooltip"
           aria-label="Example icon-button with share icon">
+          <span [class]="toolShow">Settings</span>
+          <mat-icon>settings</mat-icon>
+        </button>
+        <button routerLink="/calendar" mat-icon-button class="example-icon tooltip"
+          aria-label="Example icon-button with share icon">
+          <span class="tooltiptext">Calendar</span>
           <mat-icon>calendar_month</mat-icon>
         </button>
-        <!-- <button mat-icon-button class="example-icon" aria-label="Example icon-button with share icon" >
-          <mat-icon>palette</mat-icon>
-      </button> -->
-        <button routerLink="/users" mat-icon-button class="example-icon"
+        <button routerLink="/users" mat-icon-button class="example-icon tooltip"
           aria-label="Example icon-button with share icon">
+          <span [class]="toolShow">Users</span>
           <mat-icon> manage_accounts</mat-icon>
         </button>
         <button mat-icon-button class="example-icon" aria-label="Example icon-button with share icon">
@@ -41,4 +41,6 @@
       </mat-toolbar>
     </header>
   </div>
+
+
 </section>
