@@ -1,6 +1,4 @@
 import { Injectable, Output, EventEmitter } from '@angular/core';
-import { Auth } from '@angular/fire/auth';
-import { Input } from '@angular/core';
 import { AngularFireAuth } from '@angular/fire/compat/auth'
 import { Router } from '@angular/router';
 import { GoogleAuthProvider, FacebookAuthProvider, GithubAuthProvider } from '@angular/fire/auth'
@@ -9,6 +7,7 @@ import { GoogleAuthProvider, FacebookAuthProvider, GithubAuthProvider } from '@a
 })
 export class AuthService {
   constructor(private fireAuth: AngularFireAuth, private router: Router) { }
+
   //Login sistemi:
   login(email: string, password: string) {
     this.fireAuth.signInWithEmailAndPassword(email, password).then(() => {
@@ -23,6 +22,7 @@ export class AuthService {
       }
     })
   }
+
   //Register function
   register(email: string, password: string) {
     this.fireAuth.createUserWithEmailAndPassword(email, password).then(() => {
@@ -33,6 +33,7 @@ export class AuthService {
       this.router.navigate(['/register']);
     })
   }
+
   //getuserdata
   getUserData() {
     // console.log(this.fireAuth.authState.forEach(e=>{
@@ -62,6 +63,7 @@ export class AuthService {
     })
   }
 
+  //Login Routing
   loginRouter() {
     if (localStorage.getItem('token') == 'true') {
       return true

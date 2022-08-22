@@ -1,4 +1,4 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit} from '@angular/core';
 import { AuthService } from 'src/app/shared/auth.service';
 
 @Component({
@@ -9,6 +9,17 @@ import { AuthService } from 'src/app/shared/auth.service';
 export class SettingsComponent implements OnInit {
 
   constructor(private authService: AuthService) { }
+
+  //Fonts
+  mobile: boolean = false;
+  //Weather 
+  cityName: string = '';
+  cityComponentName: string = '';
+  //Hide Weather Widget
+  hideWeather = '';
+  //Auto logout
+  toggleSwith: boolean = false;
+  disableButton: boolean = false;
 
 
   ngOnInit(): void {
@@ -50,7 +61,6 @@ export class SettingsComponent implements OnInit {
     localStorage.removeItem('fontSize');
   }
 
-  mobile: boolean = false;
   biggerSize() {
     if (window.innerWidth > 900) {
       document.querySelectorAll('*').forEach(tags => {
@@ -85,10 +95,6 @@ export class SettingsComponent implements OnInit {
     })
   }
 
-  //Weather City
-  cityName: string = '';
-  cityComponentName: string = '';
-
   changeCity() {
     if (this.cityName === "") {
       alert("boş")
@@ -105,7 +111,6 @@ export class SettingsComponent implements OnInit {
   }
 
   //Hide Weather Widget
-  hideWeather = '';
   hideWeatherWidget() {
     if (this.hideWeather == '') {
       this.hideWeather = 'none';
@@ -121,10 +126,8 @@ export class SettingsComponent implements OnInit {
     }
   }
 
-
   //Clear localStorage
   clearCache() {
-    console.log("cache cleared")
     if (confirm("tüm ayarlar silenecek ve sayfa yenilenecektir.") == true) {
       localStorage.removeItem("newCity");
       localStorage.removeItem("darkMode");
@@ -140,8 +143,6 @@ export class SettingsComponent implements OnInit {
   }
 
   //Auto logout
-  toggleSwith: boolean = false;
-  disableButton: boolean = false;
   autoOut() {
     let confirmAutoLogOut = confirm("uygulama 30 dakika sonra kapanacak onaylıyor musun?Bu onaydan sonra tekrar geri dönüş yok!")
     if (confirmAutoLogOut == true) {
@@ -177,7 +178,7 @@ export class SettingsComponent implements OnInit {
 
 
 
-  
+
 
 
 }

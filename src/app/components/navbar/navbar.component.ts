@@ -9,12 +9,15 @@ import { AuthService } from 'src/app/shared/auth.service';
 
 export class NavbarComponent implements OnInit {
   constructor(private auth: AuthService) { }
-  lightMode = '';
-  navDark = '';
-  color = 'primary';
 
   //DarkMode Icon
   darkMode: boolean = false;
+  lightMode = '';
+  navDark = '';
+  color = 'primary';
+  //Show tool tips for user
+  toolShow = 'tooltiptext'
+  
   ngOnInit(): void {
     let darkMode = localStorage.getItem('darkMode');
     if (darkMode === "true") {
@@ -47,11 +50,9 @@ export class NavbarComponent implements OnInit {
     //tool tips for user
     this.showTools();
 
-
   }
 
-  //Show tool tips for user
-  toolShow = 'tooltiptext'
+  //Show tools
   showTools() {
     if (localStorage.getItem("toolShow") != "true") {
       this.toolShow = 'visibleTool';
@@ -66,7 +67,6 @@ export class NavbarComponent implements OnInit {
 
   }
 
-
   //DarkMode
   enableDarkMode() {
     document.body.classList.add("dark-theme");
@@ -75,6 +75,8 @@ export class NavbarComponent implements OnInit {
     this.navDark = 'navBlack';
     this.darkMode = true;
   }
+  
+  //DarkMode
   disableDarkMode() {
     document.body.classList.remove("dark-theme");
     localStorage.setItem("darkMode", "false");
@@ -87,21 +89,6 @@ export class NavbarComponent implements OnInit {
   register() {
     this.auth.logout();
   }
-  // colorChange() {
-  //   if (this.color === 'primary') {
-  //     this.color = 'warn';
-  //     localStorage.setItem('navColor','warn');
-  //   } else if (this.color === 'warn') {
-  //     this.color = 'accent'
-  //     localStorage.setItem('navColor','accent');
-  //   } else if (this.color === 'accent') {
-  //     this.color = 'basic';
-  //     localStorage.setItem('navColor','basic');
-  //   } else if (this.color === 'basic') {
-  //     this.color = 'primary';
-  //     localStorage.setItem('navColor','primary');
-  //   }
-  // }
 
 }
 

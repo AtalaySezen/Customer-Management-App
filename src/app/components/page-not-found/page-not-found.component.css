@@ -31,7 +31,10 @@ body {
     font-size: 1.2rem;
     text-align: left;
 }
-
+a{
+    text-decoration: none;
+    color: white !important;
+}
 @media(max-width:900px){
     .notFound-info {
         font-size:0.8rem;

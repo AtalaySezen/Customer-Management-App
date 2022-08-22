@@ -6,12 +6,15 @@ import { Component, OnInit, Input } from '@angular/core';
   styleUrls: ['./weather.component.css']
 })
 export class WeatherComponent implements OnInit {
+  //Weather
   WeatherData: any;
+  cityInfo = 'istanbul';
+
   constructor() { }
-  @Input() hideWeather:string='';
+  @Input() hideWeather: string = '';
   ngOnInit(): void {
-    this.test()
-  
+    this.changeCityInfo()
+
     if (localStorage.getItem('fontSize') === "smallSize") {
       document.querySelectorAll('*').forEach(tags => {
         tags.classList.add('smallSize');
@@ -37,25 +40,23 @@ export class WeatherComponent implements OnInit {
     console.log(this.WeatherData);
   }
   //
-  test(){
-    let cityName = localStorage.getItem("newCity")||" ";
-    if(cityName !==' '){
-     this.cityInfo = cityName;
-    }else if(this.cityInfo==null||undefined||cityName==null||undefined){
+  changeCityInfo() {
+    let cityName = localStorage.getItem("newCity") || " ";
+    if (cityName !== ' ') {
+      this.cityInfo = cityName;
+    } else if (this.cityInfo == null || undefined || cityName == null || undefined) {
       this.cityInfo === "istanbul";
     }
   }
 
-  //City info
-cityInfo = 'istanbul';
 
   getWeatherData() {
     fetch(`https://api.openweathermap.org/data/2.5/weather?q=${this.cityInfo}&appid=5ac25577e127a85829dd2e4d73736bc4`)
       .then(response => response.json())
       .then(data => {
         this.setWeatherData(data), console.log(data);
-      }).catch(error=>{
-        this.cityInfo =="istanbul"
+      }).catch(error => {
+        this.cityInfo == "istanbul"
         console.log(this.cityInfo);
         console.log("hata")
       })

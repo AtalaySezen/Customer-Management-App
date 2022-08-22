@@ -1,6 +1,6 @@
-import { Component, Input, OnInit, Output, EventEmitter } from '@angular/core';
+import { Component,  OnInit } from '@angular/core';
 import { AuthService } from 'src/app/shared/auth.service';
-import { ReactiveFormsModule, Validators } from '@angular/forms';
+import { Validators } from '@angular/forms';
 import { FormGroup, FormControl } from '@angular/forms';
 
 @Component({
@@ -14,6 +14,7 @@ export class LoginComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  //Reactive form
   email: string = '';
   password: string = '';
   formCard = new FormGroup({
@@ -21,7 +22,7 @@ export class LoginComponent implements OnInit {
     password: new FormControl('', [Validators.minLength(5)])
   })
 
-
+  //Login
   login() {
     this.auth.login(this.email, this.password);
     this.email = '';
