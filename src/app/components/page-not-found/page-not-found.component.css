@@ -1,0 +1,40 @@
+body {
+    background-color: #3F51B5;
+    height: 100vh;
+    width: 100%;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+}
+
+.notFound-header {
+    font-size: 7rem;
+    color: white !important;
+}
+
+.notFound-subheader {
+    color: white !important;
+    margin:22px;
+}
+
+.notFound-info {
+    color: white !important;
+    font-size: 1.2rem;
+    text-align: left;
+}
+
+@media(max-width:900px){
+    .notFound-info {
+        font-size:0.8rem;
+        text-align: center;
+    }
+}
