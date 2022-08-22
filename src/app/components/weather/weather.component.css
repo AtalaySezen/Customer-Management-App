@@ -6,19 +6,6 @@
     text-align: center;
 }
 
-.weather-widget {
-    background: #CEF;
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-    color: white;
-    height: 160px;
-}
-
-.weatherWidgetRow {}
 
 /*
 #divWeatherMain{

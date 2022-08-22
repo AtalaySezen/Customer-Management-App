@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 
 @Component({
   selector: 'app-weather',
@@ -8,8 +8,10 @@ import { Component, OnInit } from '@angular/core';
 export class WeatherComponent implements OnInit {
   WeatherData: any;
   constructor() { }
-
+  @Input() hideWeather:string='';
   ngOnInit(): void {
+    this.test()
+  
     if (localStorage.getItem('fontSize') === "smallSize") {
       document.querySelectorAll('*').forEach(tags => {
         tags.classList.add('smallSize');
@@ -34,18 +36,29 @@ export class WeatherComponent implements OnInit {
     this.getWeatherData();
     console.log(this.WeatherData);
   }
+  //
+  test(){
+    let cityName = localStorage.getItem("newCity")||" ";
+    if(cityName !==' '){
+     this.cityInfo = cityName;
+    }else if(this.cityInfo==null||undefined||cityName==null||undefined){
+      this.cityInfo === "istanbul";
+    }
+  }
+
   //City info
-  cityInfo = 'istanbul'
+cityInfo = 'istanbul';
 
   getWeatherData() {
     fetch(`https://api.openweathermap.org/data/2.5/weather?q=${this.cityInfo}&appid=5ac25577e127a85829dd2e4d73736bc4`)
       .then(response => response.json())
       .then(data => {
         this.setWeatherData(data), console.log(data);
-        console.log("çalıştı")
-
+      }).catch(error=>{
+        this.cityInfo =="istanbul"
+        console.log(this.cityInfo);
+        console.log("hata")
       })
-
   }
 
   setWeatherData(data: any) {

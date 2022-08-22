@@ -6,7 +6,7 @@
             Lorem ipsum dolor sit amet consectetur adipisicing elit. Facere, optio quis quas nisi hic dolore sequi enim animi recusandae temporibus architecto cumque. Accusantium fugit commodi voluptate minus. Ullam possimus eum consectetur voluptate incidunt consequatur praesentium? Voluptates exercitationem fugit nostrum. Dicta, beatae? Sapiente quibusdam sunt officiis, enim consequuntur iure. Fugiat, maiores!3
         </p> -->
     </header>
-    <app-weather ></app-weather>
+    <app-weather [hideWeather]="hideWeather"></app-weather>
     <mat-accordion>
         <mat-expansion-panel hideToggle class="mat-expansion">
             <mat-expansion-panel-header class="mat-expansion">
@@ -48,10 +48,10 @@
                 </mat-panel-description>
             </mat-expansion-panel-header>
             <div class="change-weather">
-            <label>City:</label>
-            <input type="text">
-            <button (click)="changeCity()">Change City</button>
-            <button>Hide Weather Widget</button>
+                <label>City:</label>
+                <input type="text" [(ngModel)]="cityName">
+                <button (click)="changeCity()">Change City</button>
+                <button (click)="hideWeatherWidget()">Hide Weather Widget</button>
             </div>
         </mat-expansion-panel>
         <mat-expansion-panel class="mat-expansion">
@@ -63,7 +63,11 @@
                     App Settings
                 </mat-panel-description>
             </mat-expansion-panel-header>
-         
+            <button (click)="clearCache()">Clear Cache</button>
+            <label class="switch">
+                <input [disabled]="disableButton!" (click)="autoOut()" type="checkbox">
+                <span class="slider round"></span>
+            </label>
         </mat-expansion-panel>
     </mat-accordion>
 

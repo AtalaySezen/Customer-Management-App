@@ -29,6 +29,7 @@ import { MatSelectModule } from '@angular/material/select';
 import { UsersInfoComponent } from './components/users-info/users-info.component';
 import { ReactiveFormsModule } from "@angular/forms";
 import { NgxMaskModule, IConfig } from 'ngx-mask';
+import { PageNotFoundComponent } from './components/page-not-found/page-not-found.component';
 
 @NgModule({
   declarations: [
@@ -42,6 +43,7 @@ import { NgxMaskModule, IConfig } from 'ngx-mask';
     CalendarComponent,
     WeatherComponent,
     SettingsComponent,
+    PageNotFoundComponent,
   ],
   imports: [
     ReactiveFormsModule,

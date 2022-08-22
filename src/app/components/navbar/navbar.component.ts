@@ -58,7 +58,7 @@ export class NavbarComponent implements OnInit {
       //Hide auto
       setTimeout(() => {
         this.toolShow = 'tooltiptext';
-      }, 2000);
+      }, 3000);
       localStorage.setItem("toolShow", "true");
     } else if (localStorage.getItem("toolShow") == "true") {
       this.toolShow == 'tooltiptext'

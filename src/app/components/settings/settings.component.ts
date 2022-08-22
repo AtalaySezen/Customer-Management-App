@@ -1,4 +1,5 @@
 import { Component, OnInit, Input } from '@angular/core';
+import { AuthService } from 'src/app/shared/auth.service';
 
 @Component({
   selector: 'app-settings',
@@ -7,7 +8,8 @@ import { Component, OnInit, Input } from '@angular/core';
 })
 export class SettingsComponent implements OnInit {
 
-  constructor() { }
+  constructor(private authService: AuthService) { }
+
 
   ngOnInit(): void {
     if (localStorage.getItem('fontSize') === "smallSize") {
@@ -26,10 +28,12 @@ export class SettingsComponent implements OnInit {
       document.querySelectorAll('*').forEach(tags => {
         tags.classList.add('poppins');
       })
-
     }
+    this.autoLocalStorageOut();
+    this.hideWeatherStorage();
   }
 
+  //Fontsize change
   smallSize(): void {
     document.querySelectorAll('*').forEach(tags => {
       tags.classList.remove('biggerSize');
@@ -45,6 +49,7 @@ export class SettingsComponent implements OnInit {
     });
     localStorage.removeItem('fontSize');
   }
+
   mobile: boolean = false;
   biggerSize() {
     if (window.innerWidth > 900) {
@@ -58,14 +63,14 @@ export class SettingsComponent implements OnInit {
     }
   }
 
-  //Font Change
+  //Fonts Change
   poppinsFont() {
     document.querySelectorAll('*').forEach(tags => {
       tags.classList.add('poppins');
       localStorage.setItem('fontFamily', 'poppins');
     })
-
   }
+
   robotoFont() {
     document.querySelectorAll('*').forEach(tags => {
       tags.classList.remove('poppins');
@@ -79,9 +84,100 @@ export class SettingsComponent implements OnInit {
       localStorage.setItem('fontFamily', 'lato');
     })
   }
-  //Weather City
 
-  changeCity(){
-    
+  //Weather City
+  cityName: string = '';
+  cityComponentName: string = '';
+
+  changeCity() {
+    if (this.cityName === "") {
+      alert("boş")
+      return false;
+    }
+    else if (confirm("ok?") == true) {
+      console.log(this.cityName);
+      localStorage.setItem("newCity", this.cityName);
+      window.location.reload();
+      return true;
+    } else {
+      return false;
+    }
   }
+
+  //Hide Weather Widget
+  hideWeather = '';
+  hideWeatherWidget() {
+    if (this.hideWeather == '') {
+      this.hideWeather = 'none';
+      localStorage.setItem("hideWeatherWidget", "hide");
+    } else if (this.hideWeather == 'none') {
+      this.hideWeather = '';
+      localStorage.removeItem("hideWeatherWidget");
+    }
+  }
+  hideWeatherStorage() {
+    if (localStorage.getItem("hideWeatherWidget") == "hide") {
+      this.hideWeather = 'none';
+    }
+  }
+
+
+  //Clear localStorage
+  clearCache() {
+    console.log("cache cleared")
+    if (confirm("tüm ayarlar silenecek ve sayfa yenilenecektir.") == true) {
+      localStorage.removeItem("newCity");
+      localStorage.removeItem("darkMode");
+      localStorage.removeItem("fontSize");
+      localStorage.removeItem("fontFamily");
+      localStorage.removeItem("autoOut");
+      localStorage.removeItem("hideWeatherWidget");
+      window.location.reload();
+      return true;
+    } else {
+      return false
+    }
+  }
+
+  //Auto logout
+  toggleSwith: boolean = false;
+  disableButton: boolean = false;
+  autoOut() {
+    let confirmAutoLogOut = confirm("uygulama 30 dakika sonra kapanacak onaylıyor musun?Bu onaydan sonra tekrar geri dönüş yok!")
+    if (confirmAutoLogOut == true) {
+      this.toggleSwith = !this.toggleSwith
+      this.disableButton = true;
+      localStorage.setItem("autoOut", "true");
+    }
+    setTimeout(() => {
+      if (this.toggleSwith == true) {
+        console.log(this.toggleSwith)
+        this.autoLogOut()
+      }
+    }, 30 * 60 * 1000);
+  }
+
+
+  //import logout from auth.service
+  autoLogOut() {
+    this.authService.logout()
+  }
+
+
+  //Auto logout if user select 
+  autoLocalStorageOut() {
+    let localAutoLog = localStorage.getItem("autoOut");
+    setTimeout(() => {
+      if (localAutoLog === "true") {
+        this.autoLogOut();
+      }
+    }, 30 * 60 * 1000);
+  }
+
+
+
+
+  
+
+
 }
