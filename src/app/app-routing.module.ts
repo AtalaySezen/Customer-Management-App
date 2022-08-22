@@ -11,13 +11,13 @@ import { DashboardGuard } from './shared/dashboard.guard';
 
 const routes: Routes = [
   { path: '', redirectTo: 'login', pathMatch: 'full' },
-  { path: 'login', component: LoginComponent },
-  { path: 'dashboard', component: DashboardComponent, canActivate: [DashboardGuard] },
-  { path: 'register', component: RegisterComponent },
-  { path: 'users', component: UsersInfoComponent, canActivate: [DashboardGuard] },
-  { path: 'calendar', component: CalendarComponent, canActivate: [DashboardGuard] },
-  { path: 'settings', component: SettingsComponent, canActivate: [DashboardGuard] },
-  {path:'**',component:PageNotFoundComponent}
+  { path: 'login', component: LoginComponent,title:'Login'},
+  { path: 'dashboard', component: DashboardComponent, canActivate: [DashboardGuard],title:'Dashboard'},
+  { path: 'register', component: RegisterComponent,title:'Sign Up'},
+  { path: 'users', component: UsersInfoComponent, canActivate: [DashboardGuard],title:'Users'},
+  { path: 'calendar', component: CalendarComponent, canActivate: [DashboardGuard],title:'Calendar'},
+  { path: 'settings', component: SettingsComponent, canActivate: [DashboardGuard],title:'Settings'},
+  { path: '**', component: PageNotFoundComponent,title:'Page Not Found'}
 ];
 
 @NgModule({
