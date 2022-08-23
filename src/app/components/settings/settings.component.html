@@ -1,71 +1,75 @@
-<app-navbar></app-navbar>
 <div class="container">
+    <app-navbar ></app-navbar>
     <app-weather [hideWeather]="hideWeather"></app-weather>
-    <mat-accordion>
-        <mat-expansion-panel hideToggle class="mat-expansion">
-            <mat-expansion-panel-header class="mat-expansion">
-                <mat-panel-title class="text">
-                    Fonts Settings
-                </mat-panel-title>
-                <mat-panel-description class="text">
-                    If you want bigger fonts, we have.
-                </mat-panel-description>
-            </mat-expansion-panel-header>
-            <div class="btn-size">
-                <button class="btn-sizer" (click)="smallSize()">Smaller</button>
-                <button class="btn-sizer" (click)="defaultSize()">Default</button>
-                <button [disabled]="mobile" class="btn-sizer" (click)="biggerSize()">Bigger</button>
+    <mat-tab-group mat-align-tabs="center" animationDuration="0">
+        <mat-tab label="Font Settings">
+            <div class="tab-content">
+                <div class="fonts-header">
+                    <h1>If you need bigger fonts you can change settings</h1>
+                </div>
+                <div class="btn-size">
+                    <button class="btn-sizer" (click)="smallSize()">Smaller</button>
+                    <button class="btn-sizer" (click)="defaultSize()">Default</button>
+                    <button [disabled]="mobile" class="btn-sizer" (click)="biggerSize()">Bigger</button>
+                </div>
             </div>
-        </mat-expansion-panel>
-        <mat-expansion-panel class="mat-expansion">
-            <mat-expansion-panel-header class="mat-expansion">
-                <mat-panel-title class="text">
-                    Font Family
-                </mat-panel-title>
-                <mat-panel-description class="text">
-                    Font family
-                </mat-panel-description>
-            </mat-expansion-panel-header>
-            <div class="btn-size">
-                <button class="btn-sizer" (click)="poppinsFont()">Google Poppins</button>
-                <button class="btn-sizer" (click)="robotoFont()">Google Roboto(Default)</button>
-                <button class="btn-sizer" (click)="latoFont()">Google Lato</button>
-            </div>
-        </mat-expansion-panel>
-        <mat-expansion-panel class="mat-expansion">
-            <mat-expansion-panel-header class="mat-expansion">
-                <mat-panel-title class="text">
-                    Weather
-                </mat-panel-title>
-                <mat-panel-description class="text">
-                    Weather Settings
-                </mat-panel-description>
-            </mat-expansion-panel-header>
-            <div class="change-weather">
-                <label>City:</label>
-                <input type="text" [(ngModel)]="cityName">
-                <button (click)="changeCity()">Change City</button>
-                <button (click)="hideWeatherWidget()">Hide Weather Widget</button>
-            </div>
-        </mat-expansion-panel>
-        <mat-expansion-panel class="mat-expansion">
-            <mat-expansion-panel-header class="mat-expansion">
-                <mat-panel-title class="text">
-                    App Settings
-                </mat-panel-title>
-                <mat-panel-description class="text">
-                    App Settings
-                </mat-panel-description>
-            </mat-expansion-panel-header>
-            <button (click)="clearCache()">Clear Cache</button>
-            <label class="switch">
-                <input [disabled]="disableButton!" [(ngModel)]="item" (click)="autoOut()" [type]="checkbox" ng-checked="test">
-                <span class="slider round"></span>
-            </label>
-            <input type="text" placeholder="change app name">
-            <button >Change City</button>
-        </mat-expansion-panel>
-    </mat-accordion>
+        </mat-tab>
+        <mat-tab label="Font family">
+            <div class="tab-content">
+                <div class="fonts-header">
+                    <h1>If you want different font family you can choose</h1>
+                </div>
+                <div class="btn-size">
+                    <button class="btn-sizer" (click)="poppinsFont()">Google Poppins</button>
+                    <button class="btn-sizer" (click)="robotoFont()">Google Roboto(Default)</button>
+                    <button class="btn-sizer" (click)="latoFont()">Google Lato</button>
+                </div>
+                <div class="btn-size">
+                    <button class="btn-sizer" (click)="poppinsFont()">Google Poppins</button>
+                    <button class="btn-sizer" (click)="robotoFont()">Google Roboto(Default)</button>
+                    <button class="btn-sizer" (click)="latoFont()">Google Lato</button>
+                </div>
 
+            </div>
+        </mat-tab>
+        <mat-tab label="App Settings">
+            <div class="tab-content">
+                <div class="fonts-header">
+                    <h1>App Settings</h1>
+                </div>
+                <div class="change-weather">
+                    <mat-form-field class="example-full-width flex-1" appearance="fill">
+                        <mat-label>Search City</mat-label>
+                        <input [(ngModel)]="cityName" matInput placeholder="Istanbul">
+                    </mat-form-field>
+                    <button class="change-city" mat-raised-button color="primary" (click)="changeCity()">Change
+                        City</button>
+                    <button class="change-city" mat-stroked-button color="primary" (click)="hideWeatherWidget()">Hide
+                        Weather Widget</button>
+                </div>
+                <div class="change-weather">
+                    <button class="change-city" mat-raised-button color="primary" (click)="clearCache()">Clear
+                        Cache</button>
+                    <button [disabled]="disableButton!" (click)="autoOut()" mat-raised-button color="basic">Enable Automatic Logout</button>
+                </div>
+                <div class="change-weather">
+                    <mat-form-field class="example-full-width flex-1" appearance="fill">
+                        <mat-label>Search City</mat-label>
+                        <input [(ngModel)]="appName" matInput placeholder="Istanbul">
+                    </mat-form-field>
+                    <button class="change-city" mat-raised-button color="primary" (click)="changeAppName()"  >Change App
+                        Name</button>
+                </div>
+
+                <!-- <label class="switch">
+                            <input [disabled]="disableButton!" [(ngModel)]="item" (click)="autoOut()" [type]="checkbox" ng-checked="test">
+                            <span class="slider round"></span>
+                        </label> -->
+                <!-- <button (click)="clearCache()">Clear Cache</button>
+         
+            <input type="text" placeholder="change app name"> -->
+            </div>
+        </mat-tab>
+    </mat-tab-group>
 
 </div>

@@ -18,8 +18,10 @@ export class SettingsComponent implements OnInit {
   //Hide Weather Widget
   hideWeather = '';
   //Auto logout
-  toggleSwith: boolean = false;
   disableButton: boolean = false;
+  //App name change
+  appName: string = '';
+  newAppName:string='';
 
 
   ngOnInit(): void {
@@ -144,37 +146,21 @@ export class SettingsComponent implements OnInit {
 
 
 
-  item: boolean = false;
-  checkbox = 'checkbox';
 
-  checkboxControl() {
-    if (this.item == true) {
-      this.checkbox = 'checkbox';
-    } else if (this.item == false) {
-      this.checkbox = '';
-    }
-  }
 
   autoOut() {
-    this.checkbox = 'checkbox'
     let confirmAutoLogOut = confirm("uygulama 30 dakika sonra kapanacak onaylıyor musun?Bu onaydan sonra tekrar geri dönüş yok!")
     if (confirmAutoLogOut == true) {
-      this.item = true;
-      this.checkboxControl();
-      console.log(this.item)
-      this.toggleSwith = !this.toggleSwith
       localStorage.setItem("autoOut", "true");
+      setTimeout(() => {
+        if (localStorage.getItem("autoOut") == "true") {
+          this.autoLogOut()
+        }
+      }, 30 * 60 * 1000);
+      return true;
     } else {
-      this.item = false;
-      this.checkboxControl();
-      console.log(this.item)
+      return false;
     }
-    setTimeout(() => {
-      if (this.toggleSwith == true) {
-        console.log(this.toggleSwith)
-        this.autoLogOut()
-      }
-    }, 30 * 60 * 1000);
   }
 
   //import logout from auth.service
@@ -192,7 +178,12 @@ export class SettingsComponent implements OnInit {
     }, 30 * 60 * 1000);
   }
 
+  //App name change
+  changeAppName(){
+    this.appName = this.newAppName;
+    localStorage.setItem("newAppName",this.newAppName);
 
+  }
 
 
 

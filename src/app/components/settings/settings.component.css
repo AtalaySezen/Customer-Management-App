@@ -6,25 +6,35 @@
 .btn-size {
     display: flex;
     flex-direction: row;
+    flex-wrap: wrap;
     justify-content: center;
     text-align: center;
     width: 100%;
 }
-
+.flex-1{
+    flex: 1;
+}
 .btn-sizer:focus {
     transform: scale(0.98);
 }
-
+.change-city{
+    height: 51px;
+    border-radius: 0;
+}
 .change-weather {
     display: flex;
 }
 
 input,
 button {
-    width: 100%;
     flex: 1;
 }
-
+.fonts-header{
+    font-size: 20px !important;
+}
+.tab-content{
+    margin-top: 15px;
+}
 
 @media(max-width:800px) {
     .btn-sizer {

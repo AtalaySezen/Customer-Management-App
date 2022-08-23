@@ -24,12 +24,13 @@ import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatIconModule } from '@angular/material/icon';
 import { MatTable, MatTableModule } from '@angular/material/table';
 import { MatSidenavModule } from '@angular/material/sidenav';
-import { MatExpansionModule } from '@angular/material/expansion';
-import { MatSelectModule } from '@angular/material/select';
 import { ReactiveFormsModule } from "@angular/forms";
 import { NgxMaskModule, IConfig } from 'ngx-mask';
 import { PageNotFoundComponent } from './components/page-not-found/page-not-found.component';
 import { FileComponent } from './components/file/file.component';
+import {MatTabsModule} from '@angular/material/tabs';
+import {MatInputModule} from '@angular/material/input';
+import {MatButtonModule} from '@angular/material/button';
 
 @NgModule({
   declarations: [
@@ -51,6 +52,7 @@ import { FileComponent } from './components/file/file.component';
     AppRoutingModule,
     BrowserAnimationsModule,
     FormsModule,
+    MatButtonModule,
     provideFirebaseApp(() => initializeApp(environment.firebase)),
     provideAuth(() => getAuth()),
     provideFirestore(() => getFirestore()),
@@ -59,10 +61,9 @@ import { FileComponent } from './components/file/file.component';
     MatIconModule,
     MatTableModule,
     MatSidenavModule,
-    MatExpansionModule,
     NgxMaskModule.forRoot(),
-    MatSelectModule
-
+    MatTabsModule,
+    MatInputModule
   ],
   providers: [],
   bootstrap: [AppComponent]
