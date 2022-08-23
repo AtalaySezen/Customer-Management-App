@@ -59,9 +59,11 @@
             </mat-expansion-panel-header>
             <button (click)="clearCache()">Clear Cache</button>
             <label class="switch">
-                <input [disabled]="disableButton!" (click)="autoOut()" type="checkbox">
+                <input [disabled]="disableButton!" [(ngModel)]="item" (click)="autoOut()" [type]="checkbox" ng-checked="test">
                 <span class="slider round"></span>
             </label>
+            <input type="text" placeholder="change app name">
+            <button >Change City</button>
         </mat-expansion-panel>
     </mat-accordion>
 

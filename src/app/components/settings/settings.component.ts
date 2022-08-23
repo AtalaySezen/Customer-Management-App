@@ -1,4 +1,4 @@
-import { Component, OnInit} from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { AuthService } from 'src/app/shared/auth.service';
 
 @Component({
@@ -142,13 +142,32 @@ export class SettingsComponent implements OnInit {
     }
   }
 
-  //Auto logout
+
+
+  item: boolean = false;
+  checkbox = 'checkbox';
+
+  checkboxControl() {
+    if (this.item == true) {
+      this.checkbox = 'checkbox';
+    } else if (this.item == false) {
+      this.checkbox = '';
+    }
+  }
+
   autoOut() {
+    this.checkbox = 'checkbox'
     let confirmAutoLogOut = confirm("uygulama 30 dakika sonra kapanacak onaylıyor musun?Bu onaydan sonra tekrar geri dönüş yok!")
     if (confirmAutoLogOut == true) {
+      this.item = true;
+      this.checkboxControl();
+      console.log(this.item)
       this.toggleSwith = !this.toggleSwith
-      this.disableButton = true;
       localStorage.setItem("autoOut", "true");
+    } else {
+      this.item = false;
+      this.checkboxControl();
+      console.log(this.item)
     }
     setTimeout(() => {
       if (this.toggleSwith == true) {
@@ -158,12 +177,10 @@ export class SettingsComponent implements OnInit {
     }, 30 * 60 * 1000);
   }
 
-
   //import logout from auth.service
   autoLogOut() {
     this.authService.logout()
   }
-
 
   //Auto logout if user select 
   autoLocalStorageOut() {

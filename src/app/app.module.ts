@@ -26,10 +26,10 @@ import { MatTable, MatTableModule } from '@angular/material/table';
 import { MatSidenavModule } from '@angular/material/sidenav';
 import { MatExpansionModule } from '@angular/material/expansion';
 import { MatSelectModule } from '@angular/material/select';
-import { UsersInfoComponent } from './components/users-info/users-info.component';
 import { ReactiveFormsModule } from "@angular/forms";
 import { NgxMaskModule, IConfig } from 'ngx-mask';
 import { PageNotFoundComponent } from './components/page-not-found/page-not-found.component';
+import { FileComponent } from './components/file/file.component';
 
 @NgModule({
   declarations: [
@@ -37,13 +37,13 @@ import { PageNotFoundComponent } from './components/page-not-found/page-not-foun
     LoginComponent,
     RegisterComponent,
     DashboardComponent,
-    UsersInfoComponent,
     NavbarComponent,
     SpinnerComponent,
     CalendarComponent,
     WeatherComponent,
     SettingsComponent,
     PageNotFoundComponent,
+    FileComponent,
   ],
   imports: [
     ReactiveFormsModule,

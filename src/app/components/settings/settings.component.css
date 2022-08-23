@@ -25,8 +25,11 @@ button {
     flex: 1;
 }
 
+
 @media(max-width:800px) {
     .btn-sizer {
         font-size: 9px !important;
     }
 }
+
+
