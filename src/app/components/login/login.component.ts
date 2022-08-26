@@ -1,27 +1,31 @@
-import { Component,  OnInit } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { AuthService } from 'src/app/shared/auth.service';
-import { Validators } from '@angular/forms';
+import { FormGroupDirective, NgForm, Validators } from '@angular/forms';
 import { FormGroup, FormControl } from '@angular/forms';
+import { ErrorStateMatcher } from '@angular/material/core';
+import { UpperCasePipe } from '@angular/common';
+
+
 
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
   styleUrls: ['./login.component.css']
 })
+
+
 export class LoginComponent implements OnInit {
   constructor(private auth: AuthService) { }
 
   ngOnInit(): void {
   }
-
-  //Reactive form
   email: string = '';
   password: string = '';
-  formCard = new FormGroup({
-    username: new FormControl('', [Validators.minLength(5), Validators.email]),
-    password: new FormControl('', [Validators.minLength(5)])
-  })
 
+  loginForm = new FormGroup({
+    email: new FormControl('', [Validators.minLength(5), Validators.email,Validators.required]),
+    password: new FormControl('', [Validators.required,Validators.minLength(5)])
+  })
   //Login
   login() {
     this.auth.login(this.email, this.password);

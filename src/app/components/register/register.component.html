@@ -1,4 +1,4 @@
-<div class="fluid-container">
+<section class="fluid-container">
   <div class="container">
     <div class="form-area">
       <ng-container *ngIf="registerForm.get('email')?.pristine">
@@ -25,7 +25,7 @@ registerForm.get('password')?.invalid ">
     <form [formGroup]="registerForm">
       <div class="form-info">
         <label>Email Adress</label>
-        <input formControlName="email" type="email" name="email" [(ngModel)]="email" placeholder="email">
+        <input  formControlName="email" type="email" name="email" [(ngModel)]="email" placeholder="email">
       </div>
       <div class="form-info">
         <label>Password</label>
@@ -34,4 +34,4 @@ registerForm.get('password')?.invalid ">
       <button class="btn-login" [disabled]="!registerForm.valid" (click)="register()">Sign Up</button>
     </form>
   </div>
-</div>
+</section>

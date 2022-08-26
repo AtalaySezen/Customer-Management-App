@@ -14,24 +14,6 @@ export class WeatherComponent implements OnInit {
   @Input() hideWeather: string = '';
   ngOnInit(): void {
     this.changeCityInfo()
-
-    if (localStorage.getItem('fontSize') === "smallSize") {
-      document.querySelectorAll('*').forEach(tags => {
-        tags.classList.add('smallSize');
-      })
-    } else if (localStorage.getItem('fontSize') === "biggerSize") {
-      document.querySelectorAll('*').forEach(tags => {
-        tags.classList.add('biggerSize');
-      })
-    } else if (localStorage.getItem('fontFamily') === "lato") {
-      document.querySelectorAll('*').forEach(tags => {
-        tags.classList.add('lato');
-      })
-    } else if (localStorage.getItem('fontFamily') === "poppins") {
-      document.querySelectorAll('*').forEach(tags => {
-        tags.classList.add('poppins');
-      })
-    }
     this.WeatherData = {
       main: {},
       isDay: true
@@ -39,7 +21,7 @@ export class WeatherComponent implements OnInit {
     this.getWeatherData();
     console.log(this.WeatherData);
   }
-  //
+  //Change city
   changeCityInfo() {
     let cityName = localStorage.getItem("newCity") || " ";
     if (cityName !== ' ') {
@@ -49,12 +31,12 @@ export class WeatherComponent implements OnInit {
     }
   }
 
-
+  //Fetch api
   getWeatherData() {
     fetch(`https://api.openweathermap.org/data/2.5/weather?q=${this.cityInfo}&appid=5ac25577e127a85829dd2e4d73736bc4`)
       .then(response => response.json())
       .then(data => {
-        this.setWeatherData(data), console.log(data);
+        this.setWeatherData(data);
       }).catch(error => {
         this.cityInfo == "istanbul"
         console.log(this.cityInfo);

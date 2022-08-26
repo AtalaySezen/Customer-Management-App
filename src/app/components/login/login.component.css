@@ -6,55 +6,14 @@
     position: relative;
     height: 100%;
     overflow: hidden;
-    background-color: #43435E;
+    background-color: #FFFFFF;
 }
 
-.form {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    position: relative;
-}
-
-.form-info {
-    display: flex;
-    flex-direction: column;
-    width: 100%;
-    margin: 5px 0;
-}
-
-label {
-    color: white !important;
-    font-size: 14px;
-}
-
-.form-messages {
-    color: white !important;
-}
-
-input {
-    width: 290px;
-    margin: 2px 0;
-    height: 30px;
-    background-color: transparent;
-    color: white;
-    font-size: 14px;
-    border: none;
-    border-bottom: 1px solid white;
-}
-input:focus{
-    outline: none;
-}
-input::placeholder{
-    font-size: 14px;
-    text-transform: capitalize;
-}
 .btn-login {
     width: 100%;
     margin-top: 15px;
-    height: 30px;
-    background: #27E7EF;
+    height: 37px;
+    background-color: black;
     border: none;
     color: white;
     font-size: 18px;
@@ -77,8 +36,6 @@ input::placeholder{
     background-color: white;
     background-repeat: no-repeat;
     background-position: 12px 11px;
-
-
 }
 
 .login-with-google-btn:hover {
@@ -103,54 +60,60 @@ input::placeholder{
     box-shadow: 0 -1px 0 rgba(0, 0, 0, .04), 0 1px 1px rgba(0, 0, 0, .25);
     cursor: not-allowed;
 }
-
 /*Register button */
-.register-btn{
+.register-btn {
     position: relative;
     margin-top: 3px;
     left: 45rem;
     top: 14rem;
 }
-.register{
+
+.register {
     width: 100%;
-    height: 35px;
+    height: 40px;
+    max-width: 200px;
     box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
     border-radius: 20px;
-    background: #27E7EF;
+    background-color: black;
     border: none;
     color: white;
     font-size: 16px;
     font-weight: 500;
 }
-.form-area{
-    height: 50px;
-    width: 304px;
+
+.example-form {
+    min-width: 130px !important;
+    max-width: 340px;
+}
+
+.example-full-width {
+    width: 100%;
 }
 
 /*Mobile*/
-@media(max-width:1600px){
-    .register-btn{
+@media(max-width:1600px) {
+    .register-btn {
         left: 30rem;
     }
 }
-@media(max-width:1300px){
-    .register-btn{
+
+@media(max-width:1300px) {
+    .register-btn {
         left: 0;
         top: 0;
         margin-top: 3px;
     }
 }
 
-@media(max-width:900){
-    .register-btn{
-        left: 25rem;
+@media(max-width:900px) {
+    .register-btn {
+        display: flex;
+        justify-content: center;
+    }
+    .register{
+        width: 100%;
+        max-width: 100%;
+        border-radius: 0;
     }
 }
-
-
-
-
-
-
-
 

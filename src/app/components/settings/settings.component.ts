@@ -21,33 +21,16 @@ export class SettingsComponent implements OnInit {
   disableButton: boolean = false;
   //App name change
   appName: string = '';
-  newAppName:string='';
+  newAppName: string = '';
 
 
   ngOnInit(): void {
-    if (localStorage.getItem('fontSize') === "smallSize") {
-      document.querySelectorAll('*').forEach(tags => {
-        tags.classList.add('smallSize');
-      })
-    } else if (localStorage.getItem('fontSize') === "biggerSize") {
-      document.querySelectorAll('*').forEach(tags => {
-        tags.classList.add('biggerSize');
-      })
-    } else if (localStorage.getItem('fontFamily') === "lato") {
-      document.querySelectorAll('*').forEach(tags => {
-        tags.classList.add('lato');
-      })
-    } else if (localStorage.getItem('fontFamily') === "poppins") {
-      document.querySelectorAll('*').forEach(tags => {
-        tags.classList.add('poppins');
-      })
-    }
     this.autoLocalStorageOut();
     this.hideWeatherStorage();
   }
 
   //Fontsize change
-  smallSize(): void {
+  smallSize(){
     document.querySelectorAll('*').forEach(tags => {
       tags.classList.remove('biggerSize');
       tags.classList.add('smallSize');
@@ -144,10 +127,6 @@ export class SettingsComponent implements OnInit {
     }
   }
 
-
-
-
-
   autoOut() {
     let confirmAutoLogOut = confirm("uygulama 30 dakika sonra kapanacak onaylıyor musun?Bu onaydan sonra tekrar geri dönüş yok!")
     if (confirmAutoLogOut == true) {
@@ -179,10 +158,9 @@ export class SettingsComponent implements OnInit {
   }
 
   //App name change
-  changeAppName(){
+  changeAppName() {
     this.appName = this.newAppName;
-    localStorage.setItem("newAppName",this.newAppName);
-
+    localStorage.setItem("newAppName", this.newAppName);
   }
 
 

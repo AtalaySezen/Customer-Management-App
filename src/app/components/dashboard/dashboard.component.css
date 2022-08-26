@@ -15,43 +15,24 @@
     background-color: black !important;
 }
 
-.delete {
-    color: #ef5350;
-}
-
-
-.add {
-    color: green;
-}
-
-
 .form-addCustomer {
     display: flex;
     justify-content: center;
     align-items: center;
     margin: 15px 0;
 }
-
-input {
-    font-size: 14px;
-    font-weight: 500;
-    /* box-shadow: rgb(100 100 111 / 20%) 0px 7px 29px 0px;     */
-    padding: 2px 5px;
+.th,.mat-header-cell{
+    text-align: center !important;
 }
-input:focus{
-    outline: 1px solid black;
+.add-margin{
+    margin: 0 7px
 }
-
-label {
-    font-size: 14px;
-    font-weight: 400;
-    margin: 0 5px;
-}
-
 .none {
     display: none !important;
 }
-
+.mat-form-field{
+    margin: 0 2px;
+}
 
 /*Media quaries*/
 @media(max-width:900px) {
@@ -70,10 +51,6 @@ label {
     .form-floating {
         display: flex;
         flex-direction: column;
-    }
-
-    input {
-        width: 100%;
     }
 
     .table {

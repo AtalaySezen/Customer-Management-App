@@ -1,41 +1,30 @@
-<div class="fluid-container">
-    <form class="form" [formGroup]="formCard">
-        <div class="form-area">
-            <ng-container *ngIf="formCard.get('username')?.dirty&&formCard.get('username')?.invalid">
-                <div>
-                    <p class="form-messages">
-                        Please Enter A Valid Email Adress
-                    </p>
-                </div>
-            </ng-container>
-            <ng-container *ngIf="formCard.get('password')?.dirty&&
-            formCard.get('password')?.invalid ">
-                <div>
-                    <p class="form-messages">
-                        Password Is Wrong
-                    </p>
-                </div>
-            </ng-container>
-            <ng-container *ngIf="formCard.get('username')?.pristine&&formCard.get('password')?.pristine">
-                <p class="form-messages">
-                    Welcome The Customer Management
-                </p>
-            </ng-container>
-        </div>
-        <div class="form-info">
-            <label>Email Adress</label>
-            <input formControlName="username" name="email" type="email" placeholder="email" [(ngModel)]="email">
-        </div>
-        <div class="form-info">
-            <label>Password</label>
-            <input formControlName="password" type="password" placeholder="password" [(ngModel)]="password">
-        </div>
-        <button class="btn-login" [disabled]="!formCard.valid" (click)="login()">Login</button>
-        <button type="button" class="login-with-google-btn">
-            Sign in with Google
-        </button>
-        <div class="register-btn">
-            <button class="register" routerLink="/register">Register An Account</button>
-        </div>
-    </form>
-</div>
+<section class="fluid-container">
+    <div class="form-area">
+        <form class="example-form" [formGroup]="loginForm">
+            <mat-form-field class="example-full-width input-login" appearance="fill">
+                <mat-label>Password</mat-label>
+                <input [(ngModel)]="email" type="email" matInput formControlName="email">
+                <mat-hint>Please Fill All Required Fields</mat-hint>
+                <mat-error *ngIf="loginForm.get('email')?.dirty">
+                    Password <strong>required</strong>
+                </mat-error>
+            </mat-form-field>
+            <mat-form-field class="example-full-width input-login" appearance="fill">
+                <mat-label>Password</mat-label>
+                <input [(ngModel)]="password" type="password" matInput formControlName="password">
+                <mat-hint>Please Fill All Required Fields</mat-hint>
+                <mat-error *ngIf="loginForm.get('password')?.dirty">
+                    Password <strong>required</strong>
+                </mat-error>
+            </mat-form-field>
+            <button class="btn-login" (click)="login()">Login</button>
+            <button type="button" class="login-with-google-btn" (click)="signInWithGoogle()">
+                Sign in with Google
+            </button>
+            <div class="register-btn">
+                <button class="register" routerLink="/register">Register An Account</button>
+            </div>
+        </form>
+    </div>
+
+</section>

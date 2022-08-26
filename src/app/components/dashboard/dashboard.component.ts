@@ -37,10 +37,9 @@ export class DashboardComponent implements OnInit {
   ngOnInit(): void {
     this.getAllCustomers();
     this.welcome()
-    // this.getAll()
 
   }
-  getAll(){
+  getAll() {
     this.auth.getUserData();
   }
   welcomeMessage = new Date();
@@ -139,9 +138,6 @@ export class DashboardComponent implements OnInit {
       this.visibility = false;
     }
   }
-
-
-
 
   displayedColumns: string[] = ['firstname', 'lastname', 'email', 'phone', 'actions'];
 
