@@ -1,5 +1,21 @@
-# Customer Management
+<h1>Hello, this is my Customer Management App Project</h1>
+<p>Link: https://customer-management-service.web.app/login</p>
+<p>email:admin@admin.com</p>
+<p>password:123456</p>
+<p>In this project, I used firebase. With Firebase, new users can register with their e-mail addresses, and they can also register directly via gmail if they wish.</p>
+<h1>Features</h1>
+<p>In the dasboard section. A new customer can be added and deleted.All stored in firebase.</p>
+<p>If the user wants, can hide the data in the table.</p>
+<p>In the settings section, the user can change the font size and font family according to wishes.All settings are saved to localstorage.</p>
+<p>Weather widget feature,I used https://openweathermap.org/api for weather information.</p>
+<p>In the settings section, the user can set the weather according to the city he lives in. If he does not want to see the weather, he can hide it. All settings are saved to localstorage.When the user comes back, if she didn't clear the localstorage, settings are kept.</p>
+<p>If the user approves the automatic exit button in the settings section, it will automatically exit after 30 minutes.</p>
+<p>In the settings section, you can set all settings to default with the clear cache button.</p>
+<p>In the file section, the user can upload and delete files. It can also track the file upload status as a percentage.</p>
+<p>Responsive Design</p>    
+<p>Dark Mode</p>
 
+# Customer Management
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 14.0.2.
 
 ## Development server

@@ -21,24 +21,23 @@ export class NavbarComponent implements OnInit {
 
   ngOnInit(): void {
     this.darkModeCheck();
-    this.showTools();
     this.fontSizeCheck()
   }
 
   //Show tools
-  showTools() {
-    if (localStorage.getItem("toolShow") != "true") {
-      this.toolShow = 'visibleTool';
-      //Hide auto
-      setTimeout(() => {
-        this.toolShow = 'tooltiptext';
-      }, 3000);
-      localStorage.setItem("toolShow", "true");
-    } else if (localStorage.getItem("toolShow") == "true") {
-      this.toolShow == 'tooltiptext'
-    }
+  // showTools() {
+  //   if (localStorage.getItem("toolShow") != "true") {
+  //     this.toolShow = 'visibleTool';
+  //     //Hide auto
+  //     setTimeout(() => {
+  //       this.toolShow = 'tooltiptext';
+  //     }, 3000);
+  //     localStorage.setItem("toolShow", "true");
+  //   } else if (localStorage.getItem("toolShow") == "true") {
+  //     this.toolShow == 'tooltiptext'
+  //   }
 
-  }
+  // }
 
   //DarkMode
   enableDarkMode() {
