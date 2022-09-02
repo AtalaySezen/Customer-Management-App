@@ -13,7 +13,6 @@
 <p>If the user approves the automatic exit button in the settings section, it will automatically exit after 30 minutes.</p>
 <p>In the settings section, you can set all settings to default with the clear cache button.</p>
 <p>In the file section, the user can upload and delete files. It can also track the file upload status as a percentage.</p>
-<p>Responsive Design</p>    
 <p>Dark Mode</p>
 
 # Customer Management
