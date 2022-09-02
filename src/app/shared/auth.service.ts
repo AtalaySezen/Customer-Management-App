@@ -8,6 +8,8 @@ import { GoogleAuthProvider, FacebookAuthProvider, GithubAuthProvider } from '@a
 export class AuthService {
   constructor(private fireAuth: AngularFireAuth, private router: Router) { }
 
+
+
   //Login sistemi:
   login(email: string, password: string) {
     this.fireAuth.signInWithEmailAndPassword(email, password).then(() => {
@@ -26,6 +28,7 @@ export class AuthService {
   //Register function
   register(email: string, password: string) {
     this.fireAuth.createUserWithEmailAndPassword(email, password).then(() => {
+      
       alert("başarılı bir şekilde kayıt oluşturuldu");
       this.router.navigate(['/login']);
     }, err => {

@@ -19,52 +19,55 @@
 .home {
     cursor: pointer;
 }
-.material-icons{
+
+.material-icons {
     font-size: 24px !important;
 }
+
 .tooltip {
     position: relative;
     display: inline-block;
     border-bottom: 1px dotted black;
-  }
-  
-  .tooltiptext {
+}
+
+.tooltiptext {
     visibility: hidden;
-    width: 50px;
+    width: 44px;
     background-color: black;
     color: #fff;
     text-align: center;
-    border-radius: 6px;
-    padding: 5px 0;
+    border-radius: 20px;
+    padding: 2px 2px;
     position: absolute;
-    z-index: 1;
-    left: -4px;
-    top: 30px;
+    left: 1px;
+    top: 41px;
     background-color: #2078E8;
     position: absolute;
     z-index: 1;
     font-size: 12px;
-  }
-   .visibleTool{
+}
+
+.visibleTool {
     visibility: visible;
-    width: 50px;
+    width: 45px;
     background-color: black;
     color: #fff;
     text-align: center;
-    border-radius: 6px;
-    padding: 5px 0;
+    border-radius: 5px;
+    padding: 4px 0;
     position: absolute;
     z-index: 1;
     left: -4px;
-    top: 30px;
+    top: 42px;
     background-color: #2078E8;
     position: absolute;
     z-index: 1;
-  } 
-  
-  .tooltip:hover .tooltiptext {
+    font-size: 12px;
+}
+
+.tooltip:hover .tooltiptext {
     visibility: visible;
-  }
+}
 
 /*Media quaries*/
 @media(max-width:900px) {
@@ -75,7 +78,8 @@
     h2 {
         font-size: 0.8rem;
     }
-    .example-icon{
+
+    .example-icon {
         margin: 0;
     }
 }

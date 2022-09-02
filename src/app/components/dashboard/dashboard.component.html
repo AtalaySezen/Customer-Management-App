@@ -5,25 +5,25 @@
         <div class="form-floating ">
             <mat-form-field class="example-full-width" appearance="fill">
                 <mat-label>Firstname</mat-label>
-                <input matInput [(ngModel)]="first_name">
+                <input matInput class="input" [(ngModel)]="first_name">
             </mat-form-field>
         </div>
         <div class="form-floating ">
             <mat-form-field class="example-full-width" appearance="fill">
                 <mat-label>Lastname</mat-label>
-                <input matInput [(ngModel)]="last_name">
+                <input class="input" matInput [(ngModel)]="last_name">
             </mat-form-field>
         </div>
         <div class="form-floating ">
             <mat-form-field class="example-full-width" appearance="fill">
                 <mat-label>Email</mat-label>
-                <input matInput placeholder="example@example.com" [(ngModel)]="email">
+                <input class="input" matInput placeholder="example@example.com" [(ngModel)]="email">
             </mat-form-field>
         </div>
         <div class="form-floating ">
             <mat-form-field class="example-full-width" appearance="fill">
                 <mat-label>Mobile</mat-label>
-                <input matInput id="mobile" mask="(000) 000-0000" placeholder="(123) 456-7891" [(ngModel)]="mobile">
+                <input class="input" matInput id="mobile" mask="(000) 000-0000" placeholder="(123) 456-7891" [(ngModel)]="mobile">
             </mat-form-field>
         </div>
         <button mat-stroked-button color="primary" class="add-margin" (click)="addCustomer()">Add Customer</button>

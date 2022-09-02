@@ -78,4 +78,9 @@ export class FileComponent implements OnInit {
     
   }
 
+
+
+  displayedColumns: string[] = ['File Name', 'File Size', 'email', 'phone', 'actions'];
+
+
 }

@@ -7,7 +7,6 @@ import { DashboardComponent } from './components/dashboard/dashboard.component'
 import { NavbarComponent } from './components/navbar/navbar.component';
 import { SpinnerComponent } from './components/spinner/spinner.component';
 import { WeatherComponent } from './components/weather/weather.component';
-import { CalendarComponent } from './components/calendar/calendar.component';
 import { SettingsComponent } from './components/settings/settings.component'
 //
 import { NgModule } from '@angular/core';
@@ -24,6 +23,7 @@ import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatIconModule } from '@angular/material/icon';
 import { MatTable, MatTableModule } from '@angular/material/table';
 import { MatSidenavModule } from '@angular/material/sidenav';
+import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
 import { ReactiveFormsModule } from "@angular/forms";
 import { NgxMaskModule, IConfig } from 'ngx-mask';
 import { PageNotFoundComponent } from './components/page-not-found/page-not-found.component';
@@ -40,7 +40,6 @@ import {MatButtonModule} from '@angular/material/button';
     DashboardComponent,
     NavbarComponent,
     SpinnerComponent,
-    CalendarComponent,
     WeatherComponent,
     SettingsComponent,
     PageNotFoundComponent,
@@ -53,6 +52,7 @@ import {MatButtonModule} from '@angular/material/button';
     BrowserAnimationsModule,
     FormsModule,
     MatButtonModule,
+    MatProgressSpinnerModule,
     provideFirebaseApp(() => initializeApp(environment.firebase)),
     provideAuth(() => getAuth()),
     provideFirestore(() => getFirestore()),

@@ -45,11 +45,12 @@ body {
   --btn-txt-color: white;
   --btn-bg-color: rgb(11, 88, 160);
   --border-table: rgba(0, 0, 0, 0.12);
-  --weather-bg:#3f51b5;
-  
+  --weather-bg: #3f51b5;
+  --mat-tab: rgba(0, 0, 0, 0.87);
   /* #CEF; */
   width: 100%;
   --icon-bg: black;
+  --border-input: transparent;
 }
 
 
@@ -63,8 +64,12 @@ body {
   --border-table: white;
   --icon-bg: white;
   --btn-bg: white;
-  --input-color: black;
+  --input-color: white;
   --weather-bg: black;
+  --mat-tab: white;
+  --border-input: white;
+  --change-input: white;
+
 }
 
 .text {
@@ -76,8 +81,7 @@ body {
 }
 
 .biggerSize {
-  font-size: 24px !important;
-  line-height: 1.2;
+  font-size: 20px !important;
 }
 
 body {
@@ -89,12 +93,14 @@ p,
 label {
   color: var(--text-color) !important;
 }
-h1{
+
+h1 {
   font-weight: 200 !important;
 }
 
 input {
   color: var(--input-color);
+
 }
 
 input:focus {
@@ -110,6 +116,10 @@ input:focus {
   font-weight: 300;
   margin-bottom: 5px !important;
   margin-top: 15px !important;
+}
+
+.input {
+  color: var(--input-color) !important;
 }
 
 .form-messages {
@@ -129,10 +139,23 @@ th {
   border-color: var(--border-table) !important;
 }
 
-
 /*Settings */
 .mat-expansion {
   background-color: var(--bkg-color) !important;
+}
+
+.mat-tab-label-content {
+  color: var(--mat-tab) !important;
+}
+
+.change-city {
+  color: var(--change-input) !important;
+}
+
+
+.change-city:hover {
+  background-color: #FFFFFF;
+  color: black !important;
 }
 
 .btn-sizer {

@@ -1,36 +1,22 @@
 <section class="fluid-container">
   <div class="container">
-    <div class="form-area">
-      <ng-container *ngIf="registerForm.get('email')?.pristine">
-        <p class="form-messages">
-          Welcome The Customer Management
-        </p>
-      </ng-container>
-      <ng-container *ngIf="registerForm.get('email')?.dirty&&registerForm.get('email')?.invalid">
-        <div>
-          <p class="form-messages">
-            Please Enter A Valid Email Adress
-          </p>
-        </div>
-      </ng-container>
-      <ng-container *ngIf="registerForm.get('password')?.dirty&&
-registerForm.get('password')?.invalid ">
-        <div>
-          <p class="form-messages">
-            Password Is Too Short
-          </p>
-        </div>
-      </ng-container>
-    </div>
-    <form [formGroup]="registerForm">
-      <div class="form-info">
-        <label>Email Adress</label>
-        <input  formControlName="email" type="email" name="email" [(ngModel)]="email" placeholder="email">
-      </div>
-      <div class="form-info">
-        <label>Password</label>
-        <input formControlName="password" type="password" name="password" [(ngModel)]="password" placeholder="password">
-      </div>
+    <form class="example-form" [formGroup]="registerForm">
+      <mat-form-field class="example-full-width input-login" appearance="fill">
+          <mat-label>Email</mat-label>
+          <input [(ngModel)]="email" type="email" matInput formControlName="email">
+          <mat-hint>Please Fill All Required Fields</mat-hint>
+          <mat-error *ngIf="registerForm.get('email')?.dirty">
+              Email<strong> required</strong>
+          </mat-error>
+      </mat-form-field>
+      <mat-form-field class="example-full-width input-login" appearance="fill">
+          <mat-label>Password</mat-label>
+          <input [(ngModel)]="password" type="password" matInput formControlName="password">
+          <mat-hint>Please Fill All Required Fields</mat-hint>
+          <mat-error *ngIf="registerForm.get('password')?.dirty">
+              Password <strong> required</strong>
+          </mat-error>
+      </mat-form-field>
       <button class="btn-login" [disabled]="!registerForm.valid" (click)="register()">Sign Up</button>
     </form>
   </div>

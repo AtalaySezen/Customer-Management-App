@@ -30,7 +30,7 @@ export class SettingsComponent implements OnInit {
   }
 
   //Fontsize change
-  smallSize(){
+  smallSize() {
     document.querySelectorAll('*').forEach(tags => {
       tags.classList.remove('biggerSize');
       tags.classList.add('smallSize');
@@ -96,15 +96,19 @@ export class SettingsComponent implements OnInit {
   }
 
   //Hide Weather Widget
+  hideText: string = 'Hide Weather Widget';
   hideWeatherWidget() {
     if (this.hideWeather == '') {
       this.hideWeather = 'none';
+      this.hideText = "Show Weather Widget"
       localStorage.setItem("hideWeatherWidget", "hide");
     } else if (this.hideWeather == 'none') {
       this.hideWeather = '';
+      this.hideText = 'Hide Weather Widget';
       localStorage.removeItem("hideWeatherWidget");
     }
   }
+  
   hideWeatherStorage() {
     if (localStorage.getItem("hideWeatherWidget") == "hide") {
       this.hideWeather = 'none';
@@ -113,7 +117,7 @@ export class SettingsComponent implements OnInit {
 
   //Clear localStorage
   clearCache() {
-    if (confirm("tüm ayarlar silenecek ve sayfa yenilenecektir.") == true) {
+    if (confirm("All Settings Were Reset To Default Values") == true) {
       localStorage.removeItem("newCity");
       localStorage.removeItem("darkMode");
       localStorage.removeItem("fontSize");

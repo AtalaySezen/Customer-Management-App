@@ -36,8 +36,7 @@ export class RegisterComponent implements OnInit {
     this.email = '';
     this.password = '';
   }
-
-
+ 
 
 
 

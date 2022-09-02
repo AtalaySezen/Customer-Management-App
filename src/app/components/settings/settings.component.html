@@ -1,9 +1,9 @@
 <div class="container">
-    <app-navbar ></app-navbar>
+    <app-navbar></app-navbar>
     <!----Weather App-->
     <app-weather [hideWeather]="hideWeather"></app-weather>
     <mat-tab-group mat-align-tabs="center" animationDuration="0">
-        <mat-tab label="Font Settings">
+        <mat-tab class="mat-tabs" label="Font Settings">
             <div class="tab-content">
                 <div class="fonts-header">
                     <h1>If you need bigger fonts you can change settings</h1>
@@ -25,12 +25,6 @@
                     <button class="btn-sizer" (click)="robotoFont()">Google Roboto(Default)</button>
                     <button class="btn-sizer" (click)="latoFont()">Google Lato</button>
                 </div>
-                <div class="btn-size">
-                    <button class="btn-sizer" (click)="poppinsFont()">Google Poppins</button>
-                    <button class="btn-sizer" (click)="robotoFont()">Google Roboto(Default)</button>
-                    <button class="btn-sizer" (click)="latoFont()">Google Lato</button>
-                </div>
-
             </div>
         </mat-tab>
         <mat-tab label="App Settings">
@@ -41,25 +35,17 @@
                 <div class="change-weather">
                     <mat-form-field class="example-full-width flex-1" appearance="fill">
                         <mat-label>Search City</mat-label>
-                        <input [(ngModel)]="cityName" matInput placeholder="Istanbul">
+                        <input class="input" [(ngModel)]="cityName" matInput placeholder="Istanbul">
                     </mat-form-field>
-                    <button class="change-city" mat-raised-button color="primary" (click)="changeCity()">Change
+                    <button class="change-city" mat-button color="primary" (click)="changeCity()">Change
                         City</button>
-                    <button class="change-city" mat-stroked-button color="primary" (click)="hideWeatherWidget()">Hide
-                        Weather Widget</button>
+                    <button class="change-city" mat-button color="primary" (click)="hideWeatherWidget()">{{hideText}}</button>
                 </div>
                 <div class="change-weather">
-                    <button class="change-city" mat-raised-button color="primary" (click)="clearCache()">Clear
+                    <button class="change-city" mat-button color="primary" (click)="clearCache()">Clear
                         Cache</button>
-                    <button [disabled]="disableButton!" (click)="autoOut()" mat-raised-button color="basic">Enable Automatic Logout</button>
-                </div>
-                <div class="change-weather">
-                    <mat-form-field class="example-full-width flex-1" appearance="fill">
-                        <mat-label>Search City</mat-label>
-                        <input [(ngModel)]="appName" matInput placeholder="Istanbul">
-                    </mat-form-field>
-                    <button class="change-city" mat-raised-button color="primary" (click)="changeAppName()"  >Change App
-                        Name</button>
+                    <button [disabled]="disableButton!" class="change-city" (click)="autoOut()" mat-button
+                        color="primary">Enable Automatic Logout</button>
                 </div>
             </div>
         </mat-tab>

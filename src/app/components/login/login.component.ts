@@ -5,14 +5,11 @@ import { FormGroup, FormControl } from '@angular/forms';
 import { ErrorStateMatcher } from '@angular/material/core';
 import { UpperCasePipe } from '@angular/common';
 
-
-
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
   styleUrls: ['./login.component.css']
 })
-
 
 export class LoginComponent implements OnInit {
   constructor(private auth: AuthService) { }
@@ -31,6 +28,7 @@ export class LoginComponent implements OnInit {
     this.auth.login(this.email, this.password);
     this.email = '';
     this.password = '';
+    
   }
 
   signInWithGoogle() {
