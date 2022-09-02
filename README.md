@@ -8,7 +8,7 @@
 <p>In the dasboard section. A new customer can be added and deleted.All stored in firebase.</p>
 <p>If the user wants, can hide the data in the table.</p>
 <p>In the settings section, the user can change the font size and font family according to wishes.All settings are saved to localstorage.</p>
-<p>Weather widget feature,I used https://openweathermap.org/api for weather information.</p>
+<p>Weather widget feature, I used https://openweathermap.org/api for weather information.</p>
 <p>In the settings section, the user can set the weather according to the city he lives in. If he does not want to see the weather, he can hide it. All settings are saved to localstorage.When the user comes back, if she didn't clear the localstorage, settings are kept.</p>
 <p>If the user approves the automatic exit button in the settings section, it will automatically exit after 30 minutes.</p>
 <p>In the settings section, you can set all settings to default with the clear cache button.</p>
