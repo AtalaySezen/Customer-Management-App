@@ -1,7 +1,8 @@
 <h1>Hello, this is my Customer Management App Project</h1>
 <p>Link: https://customer-management-service.web.app/login</p>
-<p>email:admin@admin.com</p>
-<p>password:123456</p>
+<p>Login information</p>
+<p>Email:admin@admin.com</p>
+<p>Password:123456</p>
 <p>In this project, I used firebase. With Firebase, new users can register with their e-mail addresses, and they can also register directly via gmail if they wish.</p>
 <h1>Features</h1>
 <p>In the dasboard section. A new customer can be added and deleted.All stored in firebase.</p>
